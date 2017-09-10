@@ -6,10 +6,20 @@ url: "" # default is empty
 author: "Wouter in 't Veld"
 site.title.custom: "./wouter.sh"
 
+# defaults
+defaults:
+  -
+    scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      permalink: "/:title.html"
+      layout: "post"
+
 # Build settings
 kramdown:
   input: GFM
-permalink: pretty
+permalink: none
 
 # Third-party services
 # just leave empty to disable it
