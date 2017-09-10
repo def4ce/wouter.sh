@@ -11,12 +11,12 @@ installing SSH server is easy. Because I use CentOS the examples will reflect th
 ```
 Start the sshd service:
 ```bash
-[wouter@miles ~ ]$ sudo systemctl enable sshd
-Created symlink from /etc/systemd/system/multi-user.target.wants/sshd.service to /usr/lib/systemd/system/sshd.service.
+[wouter@miles ~ ]$ sudo systemctl start sshd
 ```
 Making sure it starts when the machine boots
 ```bash
-[wouter@miles ~ ]$ sudo systemctl start sshd
+[wouter@miles ~ ]$ sudo systemctl enable sshd
+Created symlink from /etc/systemd/system/multi-user.target.wants/sshd.service to /usr/lib/systemd/system/sshd.service.
 ```
 Verifying the above:
 ```bash
@@ -38,7 +38,7 @@ sep 09 18:18:35 localhost.localdomain systemd[1]: Started OpenSSH server daemon.
 That's it. As a note, if you previously setup firewall rules to block incoming connections make sure to allow incoming traffic on port 22. I will post the iptables rules that I use in a moment.
 
 ### Configure sshd
-Before editing `/etc/ssh/sshd_config` we need to generate an SSH key. Github has a good [tutorial](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) on this. Follow it to setup you SSH key. Use a different key for every machine that is going to connect to your SSH service. Once setup you can copy the key to the server with:
+Before editing `/etc/ssh/sshd_config` we need to generate an SSH key. Github has a good [tutorial](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) on this. Follow it to setup your SSH key. Use a different key for every machine that is going to connect to your SSH service. Once setup you can copy the key to the server with:
 ```bash
 [wouter@miles ~ ]$ ssh-copy-id wouter@server
 ```
@@ -93,7 +93,7 @@ A masked service is one whose unit file is a symlink to /dev/null. This makes it
 
 When you mask a service, a symlink is created from /etc/systemd/system to /dev/null, leaving the original unit file elsewhere untouched. When you unmask a service the symlink is deleted.
 
-With `firewalld` out of the way, I can apply my iptables script to setup the firewall. 
+With `firewalld` out of the way, I can apply my iptables script to setup the firewall.
 
 ```bash
 #!/bin/bash
