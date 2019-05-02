@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author"
+    content="">
+<meta name="description"
+    content="Recently I setup an SSH server at home. This allows me, besides the obvious, to create an SSH tunnel to encrypt my connections and circumvent restrictions. This is particularly useful on public Wi-Fi networks. These networks may block certain services and other people using the network might be less friendly.
+Installing Your Linux server most likely already has openssh-server installed. If it hasn&amp;rsquo;t, installing SSH server is easy. Because I use CentOS the examples will reflect that." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="/posts/professional/setting-up-ssh-server-proxy/" />
+
+
+<title>
+    
+    Setting up an SSH server as a proxy :: Wouter in &#39;t Veld  — Cloud Engineer @ Coolblue. Father of Sid and Fay. Partner of Donna.
+    
+</title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.min.91687bbfc139d7ff1a244bb6d7324425f9c4f424eaaad242b478e3b3cf56396a.css">
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="theme-color" content="#252627">
+<meta itemprop="name" content="Setting up an SSH server as a proxy">
+<meta itemprop="description" content="Recently I setup an SSH server at home. This allows me, besides the obvious, to create an SSH tunnel to encrypt my connections and circumvent restrictions. This is particularly useful on public Wi-Fi networks. These networks may block certain services and other people using the network might be less friendly.
+Installing Your Linux server most likely already has openssh-server installed. If it hasn&rsquo;t, installing SSH server is easy. Because I use CentOS the examples will reflect that.">
+
+
+<meta itemprop="datePublished" content="2017-09-09T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2017-09-09T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1182">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="/"/>
+
+<meta name="twitter:title" content="Setting up an SSH server as a proxy"/>
+<meta name="twitter:description" content="Recently I setup an SSH server at home. This allows me, besides the obvious, to create an SSH tunnel to encrypt my connections and circumvent restrictions. This is particularly useful on public Wi-Fi networks. These networks may block certain services and other people using the network might be less friendly.
+Installing Your Linux server most likely already has openssh-server installed. If it hasn&rsquo;t, installing SSH server is easy. Because I use CentOS the examples will reflect that."/>
+
+
+
+
+<meta property="article:published_time" content="2017-09-09 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">wouter.sh</span>
+            <span class="logo__cursor"></span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about">About</a></li><li><a href="/posts">Blog</a></li><li><a href="/cv">Curriculum Vitae</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>6 minutes
+
+            
+
+            </p>
+        </div>
+
+        <article>
+            <h1 class="post-title"><a href="/posts/professional/setting-up-ssh-server-proxy/">Setting up an SSH server as a proxy</a></h1>
+
+            
+
+            <div class="post-content">
+                
+
+<p>Recently I setup an SSH server at home. This allows me, besides the obvious, to create an SSH tunnel to encrypt my connections and circumvent restrictions. This is particularly useful on public Wi-Fi networks. These networks may block certain services and other people using the network might be <a href="http://lifehacker.com/5906233/do-i-really-need-to-be-that-worried-about-security-when-im-using-public-wi-fi" target="_blank">less</a> friendly.</p>
+
+<h3 id="installing">Installing</h3>
+
+<p>Your Linux server most likely already has openssh-server installed. If it hasn&rsquo;t,
+installing SSH server is easy. Because I use CentOS the examples will reflect that.</p>
+
+<pre><code class="language-bash">$ sudo yum -y install openssh-server
+</code></pre>
+
+<p>Start the sshd service:</p>
+
+<pre><code class="language-bash">$ sudo systemctl start sshd
+</code></pre>
+
+<p>Making sure it starts when the machine boots</p>
+
+<pre><code class="language-bash">$ sudo systemctl enable sshd
+Created symlink from /etc/systemd/system/multi-user.target.wants/sshd.service to /usr/lib/systemd/system/sshd.service.
+</code></pre>
+
+<p>Verifying the above:</p>
+
+<pre><code class="language-bash">$ systemctl status sshd
+● sshd.service - OpenSSH server daemon
+   Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; vendor preset: enabled)
+   Active: active (running) since za 2017-09-09 18:18:35 UTC; 4s ago
+     Docs: man:sshd(8)
+           man:sshd_config(5)
+ Main PID: 2413 (sshd)
+   CGroup: /system.slice/sshd.service
+           └─2413 /usr/sbin/sshd -D -u0
+
+sep 09 18:18:35 localhost.localdomain systemd[1]: Starting OpenSSH server daemon...
+sep 09 18:18:35 localhost.localdomain sshd[2413]: Server listening on 0.0.0.0 port 22.
+sep 09 18:18:35 localhost.localdomain sshd[2413]: Server listening on :: port 22.
+sep 09 18:18:35 localhost.localdomain systemd[1]: Started OpenSSH server daemon.
+</code></pre>
+
+<p>That&rsquo;s it. As a note, if you previously setup firewall rules to block incoming connections make sure to allow incoming traffic on port 22. I will post the iptables rules that I use in a moment.</p>
+
+<h3 id="configure-sshd">Configure sshd</h3>
+
+<p>Before editing <code>/etc/ssh/sshd_config</code> we need to generate an SSH key. Github has a good <a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank">tutorial</a> on this. Follow it to setup your SSH key. Use a different key for every machine that is going to connect to your SSH service. Once setup you can copy the key to the server with:</p>
+
+<pre><code class="language-bash">$ ssh-copy-id wouter@server
+</code></pre>
+
+<p>Replace <code>server</code> with the hostname or ipadress of your ssh server and <code>user</code> with your user. You will be prompted to login with your password before the key gets copied. When the process is finished try logging in again to verify if it&rsquo;s working. Please refer to the Github <a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank">tutorial</a> if you run in to problems.</p>
+
+<p>There are some configuration settings you can apply that harden your ssh service. Use your favourite editor to edit <code>/etc/ssh/sshd_config</code>, I use vi.</p>
+
+<pre><code class="language-bash">$ sudo vi /etc/ssh/sshd_config
+</code></pre>
+
+<p>Add, edit or uncomment</p>
+
+<pre><code>PubkeyAuthentication yes
+PasswordAuthentication no
+ChallengeResponseAuthentication no
+AllowTcpForwarding yes
+</code></pre>
+
+<p>This will <em>disable</em> password authentication, one-way-authentication and <em>enables</em> public key authentication and traffic forwarding. Keys are easily managed, unsniffable and uncrackable. The same can&rsquo;t be said about passwords.</p>
+
+<p>The next one is up for discussion, allowing root access. Personally I disallow it, but <code>PermitRootLogin without-password</code> is a safe setting. This means <code>root</code> can only login with public key authentication. As mentioned, I&rsquo;ve set it to <code>PermitRootLogin no</code></p>
+
+<p>Another good practice is to use a non-standard port for your ssh service. I haven&rsquo;t done it but this will significantly reduce the amount login tries from scriptkiddies. When choosing a port, have a look at what services <a href="https://nmap.org/" target="_blank">nmap</a> scans for on a default port scan.
+To change to another port edit <code>/etc/ssh/sshd_config</code>:</p>
+
+<pre><code>Port 12345
+</code></pre>
+
+<p>Save your changes and verify the SSH configuration</p>
+
+<pre><code class="language-bash">$ sudo sshd -t
+</code></pre>
+
+<p>This should return no errors. When it doesn&rsquo;t you can restart the SSH daemon</p>
+
+<pre><code class="language-bash">$ sudo systemctl restart sshd
+</code></pre>
+
+<p>The new configuration is now active.</p>
+
+<h3 id="setting-up-iptables">Setting up iptables</h3>
+
+<p>Since I run my ssh service on the default port I am a target for <a href="https://en.wikipedia.org/wiki/Script_kiddie" target="_blank">scriptkiddies</a> trying to gain access to my machine. And since I want to tunnel my traffic when on public Wi-Fi I can&rsquo;t scope the access down to a few IP&rsquo;s.</p>
+
+<p>CentOS comes with <code>firwalld</code>. I don&rsquo;t like <code>firewalld</code> so I disable it.</p>
+
+<pre><code class="language-bash">$ sudo systemctl stop firewalld
+$ sudo systemctl disable firewalld
+Removed symlink /etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service.
+Removed symlink /etc/systemd/system/basic.target.wants/firewalld.service.
+$ sudo systemctl mask firewalld
+Created symlink from /etc/systemd/system/firewalld.service to /dev/null.
+</code></pre>
+
+<p>Disabling the service deletes the symlink, so the unit file itself is not affected, but the service is not loaded at the next boot, when systemd reads /etc/systemd/system.</p>
+
+<p>However, a disabled service can be loaded, and will be started if a service that depends on it is started; enable and disable only configure auto-start behaviour for units, and the state is easily overridden.</p>
+
+<p>A masked service is one whose unit file is a symlink to /dev/null. This makes it &ldquo;impossible&rdquo; to load the service, even if it is required by another, enabled service.</p>
+
+<p>When you mask a service, a symlink is created from /etc/systemd/system to /dev/null, leaving the original unit file elsewhere untouched. When you unmask a service the symlink is deleted.</p>
+
+<p>With <code>firewalld</code> out of the way, I can apply my iptables script to setup the firewall.</p>
+
+<pre><code class="language-bash">#!/bin/bash
+iptables -F                     # flush rules
+iptables -X                     # delete user added chains
+iptables -P FORWARD DROP        # drop forwarding
+iptables -P INPUT DROP          # drop incoming
+iptables -P OUTPUT ACCEPT       # allow outgoing
+
+# define custom chains
+iptables -N ssh_init
+iptables -N ssh_throttle
+
+iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT # accept previously allowed traffic
+iptables -A INPUT -m conntrack --ctstate INVALID -j DROP # invalid packets get dropped
+iptables -A INPUT -i lo -j ACCEPT # allow all traffic on the loopback interface
+
+# ssh init
+iptables -A INPUT -s 0/0 -p tcp --dport 22 --syn -j ssh_init
+iptables -A ssh_init -m recent --name ssh_input_trap --rcheck --seconds 60 --hitcount 3 --rttl -j DROP
+iptables -A ssh_init -m recent --name ssh_input_trap --set -j RETURN
+
+# ssh throttle
+iptables -A INPUT -s 0/0 -p tcp --dport 22 --syn -j ssh_throttle
+iptables -A ssh_throttle -m connlimit --connlimit-above 3 -j DROP
+iptables -A ssh_throttle -m limit --limit 3/m --limit-burst 1 -j ACCEPT
+
+</code></pre>
+
+<p>To make the rules persistent you need the <code>iptables-services</code> package since we disabled <code>firewalld</code>.</p>
+
+<pre><code class="language-bash">$ yum -y install iptables-services
+</code></pre>
+
+<p>After installation you can run</p>
+
+<pre><code class="language-bash">$ sudo service iptables save
+</code></pre>
+
+<blockquote>
+<p>note: If you run <code>docker</code> restart the docker service first before saving the rules. This will recreate the docker iptables rules</p>
+</blockquote>
+
+<p>These rules set the policy to drop all incoming packets except for the SYN packet on port 22. A SYN starts a connection, you&rsquo;ll usually only see it when the connection&rsquo;s being established. When someone sends three SYN packets in a minute, they get dropped. When they make more than three connections in a minute, they will get dropped. When the SYN is accepted a connection is established and the traffic will be allowed.</p>
+
+<p>With these rules in place we can start using our SSH service.</p>
+
+<h3 id="setting-up-an-ssh-tunnel">Setting up an SSH tunnel</h3>
+
+<pre><code class="language-bash">$ ssh -D 3000 -f -C -q -N wouter@miles
+</code></pre>
+
+<p>Let see what this command does.<br />
+<code>-D 3000</code> This allocates a socket to listen on port 3000.<br />
+<code>-f</code> Requests ssh to go to background just before command execution.<br />
+<code>-C</code> Requests compression of all data.<br />
+<code>-q</code> Quiet mode.<br />
+<code>-N</code> Do not execute a remote command.<br />
+<code>wouter@miles</code> user and the server.</p>
+
+<p>With the tunnel up and running you need configure your browser to use it. In <code>Firefox</code> go to <code>preferences &gt; advanced &gt; network</code> and tick <code>manual proxy configuration</code>. Next set the <code>SOCKS Host</code> to <code>localhost</code> and <code>port</code> to <code>3000</code>. Also tick the <code>proxy dns when using socks5</code> box. <code>Firefox</code> is now ready to use the tunnel.</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1182 Words</p>
+
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2017-09-09 02:00 &#43;0200</p>
+        </div>
+
+        
+
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2019</span>
+            
+            <span> <a
+                    href="/posts/index.xml" target="_blank" title="rss"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="feather feather-rss">
+                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                        <circle cx="5" cy="19" r="1"></circle>
+                    </svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Made with <font size="6">☁</font></span>
+        </div>
+    </div>
+</footer>
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/bundle.min.cf7871ed49474a80ed457154d24e61f7881adbe0f9384951a74ac46b688a39a4dbfa68bc6d37baeb058186de354ead3487d4ee7f083ea4cba860c48600b694f3.js" integrity="sha512-z3hx7UlHSoDtRXFU0k5h94ga2&#43;D5OElRp0rEa2iKOaTb&#43;mi8bTe66wWBht41Tq00h9Tufwg&#43;pMuoYMSGALaU8w=="></script>
+
+
+
+    </body>
+</html>

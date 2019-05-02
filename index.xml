@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wouter in &#39;t Veld</title>
+    <link>/</link>
+    <description>Recent content on Wouter in &#39;t Veld</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Wouter in &#39;t Veld</copyright>
+    <lastBuildDate>Thu, 02 May 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>/cv/</link>
+      <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/cv/</guid>
+      <description>Wouter in &amp;rsquo;t Veld Experienced Cloud Engineer designing, building and maintaining highly available, scalable and resilient cloud solutions for Coolblue in Amazon Web Services.
+email: hashbang@wouter.sh twitter: @wouterintveld  Experience Cloud Engineer @ Coolblue Oct. 2015 - present
+Focused on enabling developers. Designing and building a platform that makes it easy to deploy applications on Amazon Web Services.
+Part of the team that designs, builds and maintains the foundation of the platform.</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>Hey internet, welcome to my blog.
+My name is Wouter and I&amp;rsquo;m Cloud Engineer at Cloudblue, building a cloud platform for our developers to deploy their apps on.
+I am also father to Sid and Fay, partner to Donna and a gamer.</description>
+    </item>
+    
+    <item>
+      <title>Setting up an SSH server as a proxy</title>
+      <link>/posts/professional/setting-up-ssh-server-proxy/</link>
+      <pubDate>Sat, 09 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/professional/setting-up-ssh-server-proxy/</guid>
+      <description>Recently I setup an SSH server at home. This allows me, besides the obvious, to create an SSH tunnel to encrypt my connections and circumvent restrictions. This is particularly useful on public Wi-Fi networks. These networks may block certain services and other people using the network might be less friendly.
+Installing Your Linux server most likely already has openssh-server installed. If it hasn&amp;rsquo;t, installing SSH server is easy. Because I use CentOS the examples will reflect that.</description>
+    </item>
+    
+  </channel>
+</rss>
