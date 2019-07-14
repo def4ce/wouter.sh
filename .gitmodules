@@ -1,0 +1,4 @@
+[submodule "public"]
+	path = public
+	url = git@github.com:def4ce/wouter.sh.git
+	branch = gh-pages
