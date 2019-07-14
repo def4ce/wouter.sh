@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Wouter in &#39;t Veld</copyright>
-    <lastBuildDate>Thu, 02 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jul 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Disable SSH on your EC2 instances</title>
+      <link>/posts/professional/aws-disable-ssh/</link>
+      <pubDate>Sun, 14 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/professional/aws-disable-ssh/</guid>
+      <description>If you have to SSH into your servers, then your automation has failed.
+I know, crazy&amp;hellip;
+To make the transition to this mindset easier you could just disable access to port 22 in your instance security group configuration. This will highlight the things you still need to automate while still have the ability to enable access your instances to remedy immediate operational issues.
+Disabling inbound SSH will stop you from cheating.</description>
+    </item>
     
     <item>
       <title></title>
