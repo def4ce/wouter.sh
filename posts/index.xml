@@ -6,8 +6,36 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>Wouter in &#39;t Veld</copyright>
-        <lastBuildDate>Sun, 14 Jul 2019 00:00:00 +0000</lastBuildDate>
+        <lastBuildDate>Tue, 16 Jul 2019 00:00:00 +0000</lastBuildDate>
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Generate .gitignore from the command line</title>
+            <link>/posts/professional/git-ignore-from-cli/</link>
+            <pubDate>Tue, 16 Jul 2019 00:00:00 +0000</pubDate>
+            
+            <guid>/posts/professional/git-ignore-from-cli/</guid>
+            <description>You can generate .gitignore files from the command line by using the api of gitignore.io.
+To do this you need to create a git alias.
+git config --global alias.ignore \ &#39;!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi&#39;  When you created the alias you have access to the git ignore command. If you run git ignore list you will get a list of supported languages, tools, os&amp;rsquo;s and applications.
+For example, running git ignore python,visualstudiocode,osx will dump a list of ignored files for Python, VSCode and OS X to stdout.</description>
+            <content type="html"><![CDATA[<p>You can generate .gitignore files from the command line by using the api of <a href="https://gitignore.io/" target="_blank">gitignore.io</a>.</p>
+
+<p>To do this you need to create a git <a href="https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases" target="_blank">alias</a>.</p>
+
+<pre><code class="language-bash">git config --global alias.ignore \
+'!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi'
+</code></pre>
+
+<p>When you created the alias you have access to the <code>git ignore</code> command. If you run <code>git ignore list</code> you will get a list of supported languages, tools, os&rsquo;s and applications.</p>
+
+<p>For example, running <code>git ignore python,visualstudiocode,osx</code> will dump a list of ignored files for Python, VSCode and OS X to <code>stdout</code>.</p>
+
+<p>If you want to create the <code>.gitignore</code> file you need to redirect the <code>git ignore</code> command.</p>
+
+<p>Taking the previous example, if you run command again but add redirection like this: <code>git ignore python,visualstudiocode,osx &gt; .gitgnore</code>, cwyou will create a new .gitignore file. If you want to append to an existing file makes sure you change the single <code>&gt;</code> to <code>&gt;&gt;</code>.</p>
+]]></content>
+        </item>
         
         <item>
             <title>Disable SSH on your EC2 instances</title>

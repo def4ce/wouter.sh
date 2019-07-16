@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "main.css",
-	"sourceRoot": "/home/wouter/git/newblog",
+	"sourceRoot": "/Users/w.intveld/git/wouter.sh",
 	"sources": [
 		"themes/hello-friend-ng/assets/scss/main.scss",
 		"themes/hello-friend-ng/assets/scss/_normalize.scss",

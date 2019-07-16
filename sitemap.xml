@@ -3,20 +3,25 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/posts/professional/aws-disable-ssh/</loc>
-    <lastmod>2019-07-14T00:00:00+00:00</lastmod>
+    <loc>/posts/professional/git-ignore-from-cli/</loc>
+    <lastmod>2019-07-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/posts/</loc>
-    <lastmod>2019-07-14T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-07-14T00:00:00+00:00</lastmod>
+    <lastmod>2019-07-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/posts/professional/aws-disable-ssh/</loc>
+    <lastmod>2019-07-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
