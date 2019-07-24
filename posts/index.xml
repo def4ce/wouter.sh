@@ -43,10 +43,10 @@ For example, running git ignore python,visualstudiocode,osx will dump a list of 
             <pubDate>Tue, 16 Jul 2019 00:00:00 +0000</pubDate>
             
             <guid>/posts/professional/pull-request-from-cli/</guid>
-            <description>After spending some time getting git pull-request to work I decided it was to much of a hassle and decided to make my own function.
+            <description>After spending some time getting git pull-request to work I decided it was to much of a hassle and would try to make my own function.
 If you are on OS X, drop the following in your .bashrc or your preferred $SHELL equivalent and source it:
 function git_pull_request() { REPOURL=`git config --get remote.origin.url` REPO=`basename -s .git $REPOURL` BRANCH=`git symbolic-ref -q --short HEAD` GIT_USER=`git config user.name` if [[ -z $GIT_USER ]] then echo &amp;quot;Please set your Git user name by running: git config --global user.</description>
-            <content type="html"><![CDATA[<p>After spending some time getting <a href="https://www.git-scm.com/docs/git-request-pull" target="_blank">git pull-request</a> to work I decided it was to much of a hassle and decided to make my own function.</p>
+            <content type="html"><![CDATA[<p>After spending some time getting <a href="https://www.git-scm.com/docs/git-request-pull" target="_blank">git pull-request</a> to work I decided it was to much of a hassle and would try to make my own function.</p>
 
 <p>If you are on <code>OS X</code>, drop the following in your <code>.bashrc</code> or your preferred <code>$SHELL</code> equivalent and source it:</p>
 
