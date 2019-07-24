@@ -17,8 +17,23 @@ Experience
 _Focused on enabling developers. Designing and building a platform that makes it easy to deploy applications on Amazon Web Services._
 
 _My team designs, builds and maintains the foundation of the platform. We do everything from code. From setting up the initial infrastructure to the deployment pipelines. Everything is automated, fault tolerant, scalable and highly available._
+  
 
-
+  
+* Building and automating software release pipelines
+* Assisting developers in migrating their applications from onsite to AWS
+* Improving speed, quality and overall performance of the deployment process.
+* Make sure designed systems that will scale far into the future.
+* Using monitoring tools to measure and improve application and system performance.
+* Assisting developers in debugging and resolving application issues.
+* Automating the deployment process for infrastructure and applications.
+* Communicating effectively with developers, operations and business stakeholders.
+* Researching, evaluating and recommending on new technologies and processes.
+* Evaluating and implementing platform agnostic solutions for deploying applications to the cloud.
+* Utilizing programming language such as Python and PowerShell
+* Using product technologies such as Splunk, Datadog, Ansible, Packer, TeamCity, Octopus Deploy, Github for providing effective solutions.
+  
+  
 **Senior System Engineer @ [het Oogziekenhuis Rotterdam](https://www.oogziekenhuis.nl)** `Oct. 2008 – Sep. 2015` 
 _Focused on technical implementation of ICT projects. Administration of the running systems. 3rd line support for medical staff. Technical spokesperson for external parties._
 
