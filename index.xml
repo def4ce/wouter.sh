@@ -25,6 +25,17 @@ For example, running git ignore python,visualstudiocode,osx will dump a list of 
     </item>
     
     <item>
+      <title>Open a pull-request to GitHub from the CLI</title>
+      <link>/posts/professional/pull-request-from-cli/</link>
+      <pubDate>Tue, 16 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/professional/pull-request-from-cli/</guid>
+      <description>After spending some time getting git pull-request to work I decided it was to much of a hassle and decided to make my own function.
+If you are on OS X, drop the following in your .bashrc or your preferred $SHELL equivalent and source it:
+function git_pull_request() { REPOURL=`git config --get remote.origin.url` REPO=`basename -s .git $REPOURL` BRANCH=`git symbolic-ref -q --short HEAD` GIT_USER=`git config user.name` if [[ -z $GIT_USER ]] then echo &amp;quot;Please set your Git user name by running: git config --global user.</description>
+    </item>
+    
+    <item>
       <title>Disable SSH on your EC2 instances</title>
       <link>/posts/professional/aws-disable-ssh/</link>
       <pubDate>Sun, 14 Jul 2019 00:00:00 +0000</pubDate>
@@ -34,6 +45,16 @@ For example, running git ignore python,visualstudiocode,osx will dump a list of 
 I know, crazy&amp;hellip;
 To make the transition to this mindset easier you could just disable access to port 22 in your instance security group configuration. This will highlight the things you still need to automate while still having the ability to enable access your instances to remedy immediate operational issues.
 Disabling inbound SSH will stop you from cheating.</description>
+    </item>
+    
+    <item>
+      <title>Setting up an SSH server as a proxy</title>
+      <link>/posts/professional/setting-up-ssh-server-proxy/</link>
+      <pubDate>Tue, 09 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/professional/setting-up-ssh-server-proxy/</guid>
+      <description>Recently I setup an SSH server at home. This allows me, besides the obvious, to create an SSH tunnel to encrypt my connections and circumvent restrictions. This is particularly useful on public Wi-Fi networks. These networks may block certain services and other people using the network might be less friendly.
+Installing Your Linux server most likely already has openssh-server installed. If it hasn&amp;rsquo;t, installing SSH server is easy. Because I use CentOS the examples will reflect that.</description>
     </item>
     
     <item>
@@ -57,16 +78,6 @@ My team designs, builds and maintains the foundation of the platform. We do ever
       <description>Hey internet, welcome to my blog.
 My name is Wouter and I&amp;rsquo;m Cloud Engineer at Coolblue, building a cloud platform for our developers to deploy their apps on.
 I am also father to Sid and Fay, partner to Donna and a gamer.</description>
-    </item>
-    
-    <item>
-      <title>Setting up an SSH server as a proxy</title>
-      <link>/posts/professional/setting-up-ssh-server-proxy/</link>
-      <pubDate>Sat, 09 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/professional/setting-up-ssh-server-proxy/</guid>
-      <description>Recently I setup an SSH server at home. This allows me, besides the obvious, to create an SSH tunnel to encrypt my connections and circumvent restrictions. This is particularly useful on public Wi-Fi networks. These networks may block certain services and other people using the network might be less friendly.
-Installing Your Linux server most likely already has openssh-server installed. If it hasn&amp;rsquo;t, installing SSH server is easy. Because I use CentOS the examples will reflect that.</description>
     </item>
     
   </channel>

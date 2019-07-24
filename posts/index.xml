@@ -33,7 +33,44 @@ For example, running git ignore python,visualstudiocode,osx will dump a list of 
 
 <p>If you want to create the <code>.gitignore</code> file you need to redirect the <code>git ignore</code> command.</p>
 
-<p>Taking the previous example, if you run command again but add redirection like this: <code>git ignore python,visualstudiocode,osx &gt; .gitgnore</code>, cwyou will create a new .gitignore file. If you want to append to an existing file makes sure you change the single <code>&gt;</code> to <code>&gt;&gt;</code>.</p>
+<p>Taking the previous example, if you run command again but add redirection like this: <code>git ignore python,visualstudiocode,osx &gt; .gitgnore</code>, you will create a new .gitignore file. If you want to append to an existing file make sure you change the single <code>&gt;</code> to <code>&gt;&gt;</code>.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Open a pull-request to GitHub from the CLI</title>
+            <link>/posts/professional/pull-request-from-cli/</link>
+            <pubDate>Tue, 16 Jul 2019 00:00:00 +0000</pubDate>
+            
+            <guid>/posts/professional/pull-request-from-cli/</guid>
+            <description>After spending some time getting git pull-request to work I decided it was to much of a hassle and decided to make my own function.
+If you are on OS X, drop the following in your .bashrc or your preferred $SHELL equivalent and source it:
+function git_pull_request() { REPOURL=`git config --get remote.origin.url` REPO=`basename -s .git $REPOURL` BRANCH=`git symbolic-ref -q --short HEAD` GIT_USER=`git config user.name` if [[ -z $GIT_USER ]] then echo &amp;quot;Please set your Git user name by running: git config --global user.</description>
+            <content type="html"><![CDATA[<p>After spending some time getting <a href="https://www.git-scm.com/docs/git-request-pull" target="_blank">git pull-request</a> to work I decided it was to much of a hassle and decided to make my own function.</p>
+
+<p>If you are on <code>OS X</code>, drop the following in your <code>.bashrc</code> or your preferred <code>$SHELL</code> equivalent and source it:</p>
+
+<pre><code class="language-bash">function git_pull_request() {
+      REPOURL=`git config --get remote.origin.url`
+      REPO=`basename -s .git $REPOURL`
+
+      BRANCH=`git symbolic-ref -q --short HEAD`
+
+      GIT_USER=`git config user.name` 
+
+      if [[ -z $GIT_USER ]]
+          then
+              echo &quot;Please set your Git user name by running: git config --global user.name '\$USERNAME'&quot;
+              exit 1
+      fi
+
+      PR_URL=&quot;https://github.com/${GIT_USER}/${REPO}/pull/new/${BRANCH}&quot;
+
+      open $PR_URL
+}
+</code></pre>
+
+<p>Now you will have access to the <code>git_pull_request</code> command. After you pushed your changes you can use this command from anywhere in the repository and it will open your default browser with a new GitHub pull-request.</p>
 ]]></content>
         </item>
         
@@ -64,7 +101,7 @@ Disabling inbound SSH will stop you from cheating.</description>
         <item>
             <title>Setting up an SSH server as a proxy</title>
             <link>/posts/professional/setting-up-ssh-server-proxy/</link>
-            <pubDate>Sat, 09 Sep 2017 00:00:00 +0000</pubDate>
+            <pubDate>Tue, 09 Jul 2019 00:00:00 +0000</pubDate>
             
             <guid>/posts/professional/setting-up-ssh-server-proxy/</guid>
             <description>Recently I setup an SSH server at home. This allows me, besides the obvious, to create an SSH tunnel to encrypt my connections and circumvent restrictions. This is particularly useful on public Wi-Fi networks. These networks may block certain services and other people using the network might be less friendly.

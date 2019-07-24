@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>os x on Wouter in &#39;t Veld</title>
+    <link>/tags/os-x/</link>
+    <description>Recent content in os x on Wouter in &#39;t Veld</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Wouter in &#39;t Veld</copyright>
+    <lastBuildDate>Tue, 16 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/os-x/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Open a pull-request to GitHub from the CLI</title>
+      <link>/posts/professional/pull-request-from-cli/</link>
+      <pubDate>Tue, 16 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/professional/pull-request-from-cli/</guid>
+      <description>After spending some time getting git pull-request to work I decided it was to much of a hassle and decided to make my own function.
+If you are on OS X, drop the following in your .bashrc or your preferred $SHELL equivalent and source it:
+function git_pull_request() { REPOURL=`git config --get remote.origin.url` REPO=`basename -s .git $REPOURL` BRANCH=`git symbolic-ref -q --short HEAD` GIT_USER=`git config user.name` if [[ -z $GIT_USER ]] then echo &amp;quot;Please set your Git user name by running: git config --global user.</description>
+    </item>
+    
+  </channel>
+</rss>
