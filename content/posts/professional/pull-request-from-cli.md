@@ -1,6 +1,6 @@
 +++
 title = "Open a pull-request to GitHub from the CLI"
-date = "2019-07-16"
+date = "2019-07-24"
 category = "Git"
 tags = ["git", "cli", "os x"]
 +++
