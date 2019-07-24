@@ -2,6 +2,7 @@
 title = "Disable SSH on your EC2 instances"
 date = "2019-07-14"
 category = "Amazon Web Services"
+tags = ["aws"]
 +++
 
 **If you have to SSH into your servers, then your automation has failed**. 

@@ -2,6 +2,7 @@
 title = "Generate .gitignore from the command line"
 date = "2019-07-16"
 category = "Git"
+tags = ["git", "cli"]
 +++
 
 You can generate .gitignore files from the command line by using the api of [gitignore.io](https://gitignore.io/).
@@ -18,4 +19,4 @@ For example, running `git ignore python,visualstudiocode,osx` will dump a list o
 
 If you want to create the `.gitignore` file you need to redirect the `git ignore` command. 
 
-Taking the previous example, if you run command again but add redirection like this: `git ignore python,visualstudiocode,osx > .gitgnore`, cwyou will create a new .gitignore file. If you want to append to an existing file makes sure you change the single `>` to `>>`.
+Taking the previous example, if you run command again but add redirection like this: `git ignore python,visualstudiocode,osx > .gitgnore`, you will create a new .gitignore file. If you want to append to an existing file make sure you change the single `>` to `>>`.

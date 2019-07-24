@@ -1,7 +1,8 @@
 +++
 title = "Setting up an SSH server as a proxy"
-date = "2017-09-09"
+date = "2019-07-09"
 categorie = "linux"
+tags = ["linux", "ssh"]
 +++
 
 Recently I setup an SSH server at home. This allows me, besides the obvious, to create an SSH tunnel to encrypt my connections and circumvent restrictions. This is particularly useful on public Wi-Fi networks. These networks may block certain services and other people using the network might be [less](http://lifehacker.com/5906233/do-i-really-need-to-be-that-worried-about-security-when-im-using-public-wi-fi) friendly.
