@@ -1,80 +1,99 @@
 baseurl      = "/"
 languageCode = "en-us"
 theme        = "hello-friend-ng"
-googleAnalytics = "UA-139515521-1"
 
-[blackfriday]
-    hrefTargetBlank = true
+PygmentsCodeFences = true
+PygmentsStyle = "monokai"
+
+archetypeDir = "archetypes"
+contentDir   = "content"
+dataDir      = "data"
+layoutDir    = "layouts"
+publishDir   = "public"
+
 [params]
-    dateform        = "Jan 2, 2006"
-    dateformShort   = "Jan 2"
-    dateformNum     = "2006-01-02"
-    dateformNumTime = "2006-01-02 15:04 -0700"
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04 -0700"
 
-    # Metadata mostly used in document's head
-    description     = "Homepage and blog by Wouter in 't Veld"
-    keywords        = "homepage, blog, cloud, development, programming"
-    images          = [""]
-
-
-    # Directory name of your blog content (default is `content/posts`)
-    contentTypeName = "posts"
-    # Default theme "light" or "dark"
-    defaultTheme = "dark"
-
-    # Social icons
-    [[params.social]]
-        name = "twitter"
-        url  = "https://twitter.com/wouterintveld"
-
-    [[params.social]]
-        name = "email"
-        url  = "mailto:hashbang@wouter.sh"
-
-    [[params.social]]
-        name = "github"
-        url  = "https://github.com/wouter-intveld"
-
-    [[params.social]]
-        name = "linkedin"
-        url  = "https://www.linkedin.com/in/wouterintveld"
+  # Metadata mostly used in document's head
+  description     = "Homepage and blog by Wouter in 't Veld"
+  keywords        = "homepage, blog, cloud, development, programming"
+  images          = [""]
 
 
-    [[params.social]]
-        name = "gitlab"
-        url  = "https://gitlab.com/wouter-intveld"
+  # Directory name of your blog content (default is `content/posts`)
+  contentTypeName = "posts"
+  # Default theme "light" or "dark"
+  defaultTheme = "dark"
+  enableThemeToggle = true
 
-    # [[params.social]]
-    #     name = "instagram"
-    #     url  = "https://www.instagram.com/def4ce/"
+  [params.logo]
+      logoMark     = "#"
+      logoText     = "./wouter.sh"
+      logoHomeLink = "/"
 
-    # [[params.social]]
-    #     name = "steam"
-    #     url  = "https://steamcommunity.com/id/deface/"
+  [params.footer]
+      trademark = false
+      rss = false
+      copyright = false
+      author = false
 
-    [languages]
-    [languages.en]
-        title          = "Wouter in 't Veld"
-        homeSubtitle   = "Cloud Engineer"
-        subtitle       = "Cloud Engineer @ KNMI. Father of Sid and Fay. Partner of Donna."
-        keywords       = ""
-        copyright      = "Wouter in 't Veld"
-        readOtherPosts = "Read other posts"
+  topText = []
+  bottomText = [
+    "Powered by ☁️",
+  ]
 
-        [languages.en.params.logo]
-        logoText     = "#./wouter.sh"
-        logoHomeLink = "/"
+  # Social icons
+  [[params.social]]
+      name = "twitter"
+      url  = "https://twitter.com/wouterintveld"
+
+  [[params.social]]
+      name = "email"
+      url  = "mailto:hashbang@wouter.sh"
+
+  [[params.social]]
+      name = "github"
+      url  = "https://github.com/wouter-intveld"
+
+  [[params.social]]
+      name = "linkedin"
+      url  = "https://www.linkedin.com/in/wouterintveld"
+
+  [[params.social]]
+      name = "gitlab"
+      url  = "https://gitlab.com/wouter-intveld"
+
+  # [[params.social]]
+  #     name = "instagram"
+  #     url  = "https://www.instagram.com/def4ce/"
+
+  # [[params.social]]
+  #     name = "steam"
+  #     url  = "https://steamcommunity.com/id/deface/"
+
+  [languages]
+      [languages.en]
+          title          = "Wouter in 't Veld"
+          homeSubtitle   = "Cloud Engineer"
+          subtitle       = "Cloud Engineer @ KNMI. Father of Sid and Fay. Partner of Donna."
+          keywords       = ""
+          copyright      = "Wouter in 't Veld"
+          readOtherPosts = "Read other posts"
+
 [menu]
 [[menu.main]]
-    identifier = "resume"
-    name       = "Resume"
-    url        = "/resume"
-    weight     = "2"    
+  identifier = "resume"
+  name       = "Resume"
+  url        = "/resume"
+  weight     = "2"
 # [[menu.main]]
 #     identifier = "about"
 #     name       = "About"
 #     url        = "/about"
-#     weight     = "3"    
+#     weight     = "3"
 # [[menu.main]]
 #     identifier = "blog"
 #     name       = "Blog"
