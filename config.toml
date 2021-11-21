@@ -1,4 +1,4 @@
-baseurl      = "/"
+baseurl      = "https://wouters.sh"
 languageCode = "en-us"
 theme        = "hello-friend-ng"
 
@@ -40,10 +40,10 @@ publishDir   = "public"
       copyright = false
       author = false
 
-  topText = []
-  bottomText = [
-    "Powered by ☁️",
-  ]
+      topText = []
+      bottomText = [
+        "Powered by ☁️",
+      ]
 
   # Social icons
   [[params.social]]
