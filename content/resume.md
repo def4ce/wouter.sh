@@ -1,5 +1,5 @@
 +++
-date = "2019-05-02"
+date = "2021-11-21"
 +++
 
 # Wouter in 't Veld
@@ -13,7 +13,7 @@ twitter:  @wouterintveld
 Experience
 ----------
 
-**Cloud Engineer @ [Coolblue](https://www.coolblue.nl)** `Oct. 2015 - present`  
+**Cloud Engineer @ [Coolblue](https://www.coolblue.nl)** `Oct. 2015 - Jul. 2020`  
 _Focused on enabling developers. Designing and building a platform that makes it easy to deploy applications on Amazon Web Services._
 
 _My team designs, builds and maintains the foundation of the platform. We do everything from code. From setting up the initial infrastructure to the deployment pipelines. Everything is automated, fault tolerant, scalable and highly available._

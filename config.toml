@@ -39,6 +39,11 @@ googleAnalytics = "UA-139515521-1"
         name = "linkedin"
         url  = "https://www.linkedin.com/in/wouterintveld"
 
+
+    [[params.social]]
+        name = "gitlab"
+        url  = "https://gitlab.com/wouter-intveld"
+
     # [[params.social]]
     #     name = "instagram"
     #     url  = "https://www.instagram.com/def4ce/"
@@ -51,7 +56,7 @@ googleAnalytics = "UA-139515521-1"
     [languages.en]
         title          = "Wouter in 't Veld"
         homeSubtitle   = "Cloud Engineer"
-        subtitle       = "Cloud Engineer @ Coolblue. Father of Sid and Fay. Partner of Donna."
+        subtitle       = "Cloud Engineer @ KNMI. Father of Sid and Fay. Partner of Donna."
         keywords       = ""
         copyright      = "Wouter in 't Veld"
         readOtherPosts = "Read other posts"
@@ -61,17 +66,17 @@ googleAnalytics = "UA-139515521-1"
         logoHomeLink = "/"
 [menu]
 [[menu.main]]
-    identifier = "cv"
+    identifier = "resume"
     name       = "Resume"
-    url        = "/cv"
+    url        = "/resume"
     weight     = "2"    
-[[menu.main]]
-    identifier = "about"
-    name       = "About"
-    url        = "/about"
-    weight     = "3"    
-[[menu.main]]
-    identifier = "blog"
-    name       = "Blog"
-    url        = "/posts"
-    weight     = "1"
+# [[menu.main]]
+#     identifier = "about"
+#     name       = "About"
+#     url        = "/about"
+#     weight     = "3"    
+# [[menu.main]]
+#     identifier = "blog"
+#     name       = "Blog"
+#     url        = "/posts"
+#     weight     = "1"
