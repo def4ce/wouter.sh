@@ -18,7 +18,8 @@
             <description>After spending some time getting git pull-request to work I decided it was to much of a hassle and would try to make my own function.
 If you are on OS X, drop the following in your .bashrc or your preferred $SHELL equivalent and source it:
 function git_pull_request() { REPOURL=`git config --get remote.origin.url` REPO=`basename -s .git $REPOURL` BRANCH=`git symbolic-ref -q --short HEAD` GIT_USER=`git config user.name` if [[ -z $GIT_USER ]] then echo &amp;#34;Please set your Git user name by running: git config --global user.</description>
-            <content type="html"><![CDATA[<p>After spending some time getting <a href="https://www.git-scm.com/docs/git-request-pull">git pull-request</a> to work I decided it was to much of a hassle and would try to make my own function.</p>
+            <content type="html"><![CDATA[<p>After spending some time getting <a href="https://www.git-scm.com/docs/git-request-pull" target="_blank">git pull-request</a>
+ to work I decided it was to much of a hassle and would try to make my own function.</p>
 <p>If you are on <code>OS X</code>, drop the following in your <code>.bashrc</code> or your preferred <code>$SHELL</code> equivalent and source it:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">function</span> git_pull_request<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
       REPOURL<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>git config --get remote.origin.url<span style="color:#e6db74">`</span>
@@ -48,12 +49,13 @@ function git_pull_request() { REPOURL=`git config --get remote.origin.url` REPO=
             <pubDate>Tue, 16 Jul 2019 00:00:00 +0000</pubDate>
             
             <guid>/posts/professional/git-ignore-from-cli/</guid>
-            <description>You can generate .gitignore files from the command line by using the api of gitignore.io.
-To do this you need to create a git alias.
-git config --global alias.ignore \ &amp;#39;!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi&amp;#39; When you created the alias you have access to the git ignore command. If you run git ignore list you will get a list of supported languages, tools, os&amp;rsquo;s and applications.
-For example, running git ignore python,visualstudiocode,osx will dump a list of ignored files for Python, VSCode and OS X to stdout.</description>
-            <content type="html"><![CDATA[<p>You can generate .gitignore files from the command line by using the api of <a href="https://gitignore.io/">gitignore.io</a>.</p>
-<p>To do this you need to create a git <a href="https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases">alias</a>.</p>
+            <description>You can generate .gitignore files from the command line by using the api of gitignore.io .
+To do this you need to create a git alias .
+git config --global alias.ignore \ &amp;#39;!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi&amp;#39; When you created the alias you have access to the git ignore command. If you run git ignore list you will get a list of supported languages, tools, os&amp;rsquo;s and applications.</description>
+            <content type="html"><![CDATA[<p>You can generate .gitignore files from the command line by using the api of <a href="https://gitignore.io/" target="_blank">gitignore.io</a>
+.</p>
+<p>To do this you need to create a git <a href="https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases" target="_blank">alias</a>
+.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config --global alias.ignore <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span><span style="color:#e6db74">&#39;!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi&#39;</span>
 </code></pre></div><p>When you created the alias you have access to the <code>git ignore</code> command. If you run <code>git ignore list</code> you will get a list of supported languages, tools, os&rsquo;s and applications.</p>
@@ -90,7 +92,8 @@ Disabling inbound SSH will stop you from cheating.</description>
             <guid>/posts/professional/setting-up-ssh-server-proxy/</guid>
             <description>Recently I setup an SSH server at home. This allows me, besides the obvious, to create an SSH tunnel to encrypt my connections and circumvent restrictions. This is particularly useful on public Wi-Fi networks. These networks may block certain services and other people using the network might be less friendly.
 Installing Your Linux server most likely already has openssh-server installed. If it hasn&amp;rsquo;t, installing SSH server is easy. Because I use CentOS the examples will reflect that.</description>
-            <content type="html"><![CDATA[<p>Recently I setup an SSH server at home. This allows me, besides the obvious, to create an SSH tunnel to encrypt my connections and circumvent restrictions. This is particularly useful on public Wi-Fi networks. These networks may block certain services and other people using the network might be <a href="http://lifehacker.com/5906233/do-i-really-need-to-be-that-worried-about-security-when-im-using-public-wi-fi">less</a> friendly.</p>
+            <content type="html"><![CDATA[<p>Recently I setup an SSH server at home. This allows me, besides the obvious, to create an SSH tunnel to encrypt my connections and circumvent restrictions. This is particularly useful on public Wi-Fi networks. These networks may block certain services and other people using the network might be <a href="http://lifehacker.com/5906233/do-i-really-need-to-be-that-worried-about-security-when-im-using-public-wi-fi" target="_blank">less</a>
+ friendly.</p>
 <h3 id="installing">Installing</h3>
 <p>Your Linux server most likely already has openssh-server installed. If it hasn&rsquo;t,
 installing SSH server is easy. Because I use CentOS the examples will reflect that.</p>
@@ -117,9 +120,11 @@ sep <span style="color:#ae81ff">09</span> 18:18:35 localhost.localdomain sshd<sp
 sep <span style="color:#ae81ff">09</span> 18:18:35 localhost.localdomain systemd<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span>: Started OpenSSH server daemon.
 </code></pre></div><p>That&rsquo;s it. As a note, if you previously setup firewall rules to block incoming connections make sure to allow incoming traffic on port 22. I will post the iptables rules that I use in a moment.</p>
 <h3 id="configure-sshd">Configure sshd</h3>
-<p>Before editing <code>/etc/ssh/sshd_config</code> we need to generate an SSH key. Github has a good <a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/">tutorial</a> on this. Follow it to setup your SSH key. Use a different key for every machine that is going to connect to your SSH service. Once setup you can copy the key to the server with:</p>
+<p>Before editing <code>/etc/ssh/sshd_config</code> we need to generate an SSH key. Github has a good <a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank">tutorial</a>
+ on this. Follow it to setup your SSH key. Use a different key for every machine that is going to connect to your SSH service. Once setup you can copy the key to the server with:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ssh-copy-id wouter@server
-</code></pre></div><p>Replace <code>server</code> with the hostname or ipadress of your ssh server and <code>user</code> with your user. You will be prompted to login with your password before the key gets copied. When the process is finished try logging in again to verify if it&rsquo;s working. Please refer to the Github <a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/">tutorial</a> if you run in to problems.</p>
+</code></pre></div><p>Replace <code>server</code> with the hostname or ipadress of your ssh server and <code>user</code> with your user. You will be prompted to login with your password before the key gets copied. When the process is finished try logging in again to verify if it&rsquo;s working. Please refer to the Github <a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank">tutorial</a>
+ if you run in to problems.</p>
 <p>There are some configuration settings you can apply that harden your ssh service. Use your favourite editor to edit <code>/etc/ssh/sshd_config</code>, I use vi.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo vi /etc/ssh/sshd_config
 </code></pre></div><p>Add, edit or uncomment</p>
@@ -129,7 +134,8 @@ ChallengeResponseAuthentication no
 AllowTcpForwarding yes
 </code></pre><p>This will <em>disable</em> password authentication, one-way-authentication and <em>enables</em> public key authentication and traffic forwarding. Keys are easily managed, unsniffable and uncrackable. The same can&rsquo;t be said about passwords.</p>
 <p>The next one is up for discussion, allowing root access. Personally I disallow it, but <code>PermitRootLogin without-password</code> is a safe setting. This means <code>root</code> can only login with public key authentication. As mentioned, I&rsquo;ve set it to <code>PermitRootLogin no</code></p>
-<p>Another good practice is to use a non-standard port for your ssh service. I haven&rsquo;t done it but this will significantly reduce the amount login tries from scriptkiddies. When choosing a port, have a look at what services <a href="https://nmap.org/">nmap</a> scans for on a default port scan.
+<p>Another good practice is to use a non-standard port for your ssh service. I haven&rsquo;t done it but this will significantly reduce the amount login tries from scriptkiddies. When choosing a port, have a look at what services <a href="https://nmap.org/" target="_blank">nmap</a>
+ scans for on a default port scan.
 To change to another port edit <code>/etc/ssh/sshd_config</code>:</p>
 <pre tabindex="0"><code>Port 12345
 </code></pre><p>Save your changes and verify the SSH configuration</p>
@@ -138,7 +144,8 @@ To change to another port edit <code>/etc/ssh/sshd_config</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo systemctl restart sshd
 </code></pre></div><p>The new configuration is now active.</p>
 <h3 id="setting-up-iptables">Setting up iptables</h3>
-<p>Since I run my ssh service on the default port I am a target for <a href="https://en.wikipedia.org/wiki/Script_kiddie">scriptkiddies</a> trying to gain access to my machine. And since I want to tunnel my traffic when on public Wi-Fi I can&rsquo;t scope the access down to a few IP&rsquo;s.</p>
+<p>Since I run my ssh service on the default port I am a target for <a href="https://en.wikipedia.org/wiki/Script_kiddie" target="_blank">scriptkiddies</a>
+ trying to gain access to my machine. And since I want to tunnel my traffic when on public Wi-Fi I can&rsquo;t scope the access down to a few IP&rsquo;s.</p>
 <p>CentOS comes with <code>firwalld</code>. I don&rsquo;t like <code>firewalld</code> so I disable it.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo systemctl stop firewalld
 $ sudo systemctl disable firewalld

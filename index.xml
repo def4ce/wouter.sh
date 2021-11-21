@@ -14,10 +14,10 @@
       <pubDate>Sun, 21 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>/resume/</guid>
-      <description>Wouter in &amp;rsquo;t Veld Experienced Cloud Engineer designing, building and maintaining highly available, scalable and resilient cloud solutions for Coolblue in Amazon Web Services.
-email: hashbang@wouter.sh twitter: @wouterintveld Experience Cloud Engineer @ Coolblue Oct. 2015 - Jul. 2020
+      <description>Wouter in &amp;rsquo;t Veld Experienced Cloud Engineer designing, building and maintaining highly available, scalable and resilient cloud solutions for KNMI in Amazon Web Services .
+email: hashbang@wouter.sh twitter: @wouterintveld Experience Cloud Engineer @ Coolblue  Oct. 2015 - Jul. 2020
 Focused on enabling developers. Designing and building a platform that makes it easy to deploy applications on Amazon Web Services.
-My team designs, builds and maintains the foundation of the platform. We do everything from code.</description>
+My team designs, builds and maintains the foundation of the platform.</description>
     </item>
     
     <item>
@@ -37,10 +37,9 @@ function git_pull_request() { REPOURL=`git config --get remote.origin.url` REPO=
       <pubDate>Tue, 16 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>/posts/professional/git-ignore-from-cli/</guid>
-      <description>You can generate .gitignore files from the command line by using the api of gitignore.io.
-To do this you need to create a git alias.
-git config --global alias.ignore \ &amp;#39;!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi&amp;#39; When you created the alias you have access to the git ignore command. If you run git ignore list you will get a list of supported languages, tools, os&amp;rsquo;s and applications.
-For example, running git ignore python,visualstudiocode,osx will dump a list of ignored files for Python, VSCode and OS X to stdout.</description>
+      <description>You can generate .gitignore files from the command line by using the api of gitignore.io .
+To do this you need to create a git alias .
+git config --global alias.ignore \ &amp;#39;!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi&amp;#39; When you created the alias you have access to the git ignore command. If you run git ignore list you will get a list of supported languages, tools, os&amp;rsquo;s and applications.</description>
     </item>
     
     <item>
