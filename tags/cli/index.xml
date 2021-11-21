@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cli on Wouter in &#39;t Veld</title>
@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Wouter in &#39;t Veld</copyright>
-    <lastBuildDate>Wed, 24 Jul 2019 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="/tags/cli/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 24 Jul 2019 00:00:00 +0000</lastBuildDate><atom:link href="/tags/cli/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Open a pull-request to GitHub from the CLI</title>
       <link>/posts/professional/pull-request-from-cli/</link>
@@ -20,7 +16,7 @@
       <guid>/posts/professional/pull-request-from-cli/</guid>
       <description>After spending some time getting git pull-request to work I decided it was to much of a hassle and would try to make my own function.
 If you are on OS X, drop the following in your .bashrc or your preferred $SHELL equivalent and source it:
-function git_pull_request() { REPOURL=`git config --get remote.origin.url` REPO=`basename -s .git $REPOURL` BRANCH=`git symbolic-ref -q --short HEAD` GIT_USER=`git config user.name` if [[ -z $GIT_USER ]] then echo &amp;quot;Please set your Git user name by running: git config --global user.</description>
+function git_pull_request() { REPOURL=`git config --get remote.origin.url` REPO=`basename -s .git $REPOURL` BRANCH=`git symbolic-ref -q --short HEAD` GIT_USER=`git config user.name` if [[ -z $GIT_USER ]] then echo &amp;#34;Please set your Git user name by running: git config --global user.</description>
     </item>
     
     <item>
@@ -31,7 +27,7 @@ function git_pull_request() { REPOURL=`git config --get remote.origin.url` REPO=
       <guid>/posts/professional/git-ignore-from-cli/</guid>
       <description>You can generate .gitignore files from the command line by using the api of gitignore.io.
 To do this you need to create a git alias.
-git config --global alias.ignore \ &#39;!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi&#39;  When you created the alias you have access to the git ignore command. If you run git ignore list you will get a list of supported languages, tools, os&amp;rsquo;s and applications.
+git config --global alias.ignore \ &amp;#39;!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi&amp;#39; When you created the alias you have access to the git ignore command. If you run git ignore list you will get a list of supported languages, tools, os&amp;rsquo;s and applications.
 For example, running git ignore python,visualstudiocode,osx will dump a list of ignored files for Python, VSCode and OS X to stdout.</description>
     </item>
     

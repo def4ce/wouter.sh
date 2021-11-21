@@ -9,7 +9,7 @@
 <meta name="description"
     content="After spending some time getting git pull-request to work I decided it was to much of a hassle and would try to make my own function.
 If you are on OS X, drop the following in your .bashrc or your preferred $SHELL equivalent and source it:
-function git_pull_request() { REPOURL=`git config --get remote.origin.url` REPO=`basename -s .git $REPOURL` BRANCH=`git symbolic-ref -q --short HEAD` GIT_USER=`git config user.name` if [[ -z $GIT_USER ]] then echo &amp;quot;Please set your Git user name by running: git config --global user." />
+function git_pull_request() { REPOURL=`git config --get remote.origin.url` REPO=`basename -s .git $REPOURL` BRANCH=`git symbolic-ref -q --short HEAD` GIT_USER=`git config user.name` if [[ -z $GIT_USER ]] then echo &amp;#34;Please set your Git user name by running: git config --global user." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <link rel="canonical" href="/posts/professional/pull-request-from-cli/" />
@@ -17,7 +17,7 @@ function git_pull_request() { REPOURL=`git config --get remote.origin.url` REPO=
 
 <title>
     
-    Open a pull-request to GitHub from the CLI :: Wouter in &#39;t Veld  — Cloud Engineer @ Coolblue. Father of Sid and Fay. Partner of Donna.
+    Open a pull-request to GitHub from the CLI :: Wouter in &#39;t Veld  — Cloud Engineer @ KNMI. Father of Sid and Fay. Partner of Donna.
     
 </title>
 
@@ -28,7 +28,7 @@ function git_pull_request() { REPOURL=`git config --get remote.origin.url` REPO=
 
 
 
-<link rel="stylesheet" href="/main.min.91687bbfc139d7ff1a244bb6d7324425f9c4f424eaaad242b478e3b3cf56396a.css">
+<link rel="stylesheet" href="/main.min.cabb110faab88d3545467f36114f6bf3ac23f81434679cf37338752570b2eda1.css">
 
 
 
@@ -38,27 +38,19 @@ function git_pull_request() { REPOURL=`git config --get remote.origin.url` REPO=
 <link rel="manifest" href="/site.webmanifest">
 <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">
 <link rel="shortcut icon" href="/favicon.ico">
-<meta name="theme-color" content="#252627">
-<meta itemprop="name" content="Open a pull-request to GitHub from the CLI">
+<meta name="theme-color" content="#252627"><meta itemprop="name" content="Open a pull-request to GitHub from the CLI">
 <meta itemprop="description" content="After spending some time getting git pull-request to work I decided it was to much of a hassle and would try to make my own function.
 If you are on OS X, drop the following in your .bashrc or your preferred $SHELL equivalent and source it:
-function git_pull_request() { REPOURL=`git config --get remote.origin.url` REPO=`basename -s .git $REPOURL` BRANCH=`git symbolic-ref -q --short HEAD` GIT_USER=`git config user.name` if [[ -z $GIT_USER ]] then echo &quot;Please set your Git user name by running: git config --global user.">
-
-
-<meta itemprop="datePublished" content="2019-07-24T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2019-07-24T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="128">
-
-
-
-<meta itemprop="keywords" content="git,cli,os x," />
-<meta name="twitter:card" content="summary_large_image"/>
+function git_pull_request() { REPOURL=`git config --get remote.origin.url` REPO=`basename -s .git $REPOURL` BRANCH=`git symbolic-ref -q --short HEAD` GIT_USER=`git config user.name` if [[ -z $GIT_USER ]] then echo &#34;Please set your Git user name by running: git config --global user."><meta itemprop="datePublished" content="2019-07-24T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2019-07-24T00:00:00+00:00" />
+<meta itemprop="wordCount" content="128"><meta itemprop="image" content="/"/>
+<meta itemprop="keywords" content="git,cli,os x," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/"/>
 
 <meta name="twitter:title" content="Open a pull-request to GitHub from the CLI"/>
 <meta name="twitter:description" content="After spending some time getting git pull-request to work I decided it was to much of a hassle and would try to make my own function.
 If you are on OS X, drop the following in your .bashrc or your preferred $SHELL equivalent and source it:
-function git_pull_request() { REPOURL=`git config --get remote.origin.url` REPO=`basename -s .git $REPOURL` BRANCH=`git symbolic-ref -q --short HEAD` GIT_USER=`git config user.name` if [[ -z $GIT_USER ]] then echo &quot;Please set your Git user name by running: git config --global user."/>
+function git_pull_request() { REPOURL=`git config --get remote.origin.url` REPO=`basename -s .git $REPOURL` BRANCH=`git symbolic-ref -q --short HEAD` GIT_USER=`git config user.name` if [[ -z $GIT_USER ]] then echo &#34;Please set your Git user name by running: git config --global user."/>
 
 
 
@@ -91,7 +83,7 @@ function git_pull_request() { REPOURL=`git config --get remote.origin.url` REPO=
         <span class="header__right">
             
                 <nav class="menu">
-    <ul class="menu__inner"><li><a href="/posts">Blog</a></li><li><a href="/cv">Resume</a></li><li><a href="/about">About</a></li>
+    <ul class="menu__inner"><li><a href="/resume">Resume</a></li>
     </ul>
 </nav>
 
@@ -132,31 +124,27 @@ function git_pull_request() { REPOURL=`git config --get remote.origin.url` REPO=
             
 
             <div class="post-content">
-                <p>After spending some time getting <a href="https://www.git-scm.com/docs/git-request-pull" target="_blank">git pull-request</a> to work I decided it was to much of a hassle and would try to make my own function.</p>
-
+                <p>After spending some time getting <a href="https://www.git-scm.com/docs/git-request-pull">git pull-request</a> to work I decided it was to much of a hassle and would try to make my own function.</p>
 <p>If you are on <code>OS X</code>, drop the following in your <code>.bashrc</code> or your preferred <code>$SHELL</code> equivalent and source it:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">function</span> git_pull_request<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+      REPOURL<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>git config --get remote.origin.url<span style="color:#e6db74">`</span>
+      REPO<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>basename -s .git $REPOURL<span style="color:#e6db74">`</span>
 
-<pre><code class="language-bash">function git_pull_request() {
-      REPOURL=`git config --get remote.origin.url`
-      REPO=`basename -s .git $REPOURL`
+      BRANCH<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>git symbolic-ref -q --short HEAD<span style="color:#e6db74">`</span>
 
-      BRANCH=`git symbolic-ref -q --short HEAD`
+      GIT_USER<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>git config user.name<span style="color:#e6db74">`</span> 
 
-      GIT_USER=`git config user.name` 
+      <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -z $GIT_USER <span style="color:#f92672">]]</span>
+          <span style="color:#66d9ef">then</span>
+              echo <span style="color:#e6db74">&#34;Please set your Git user name by running: git config --global user.name &#39;\$USERNAME&#39;&#34;</span>
+              exit <span style="color:#ae81ff">1</span>
+      <span style="color:#66d9ef">fi</span>
 
-      if [[ -z $GIT_USER ]]
-          then
-              echo &quot;Please set your Git user name by running: git config --global user.name '\$USERNAME'&quot;
-              exit 1
-      fi
-
-      PR_URL=&quot;https://github.com/${GIT_USER}/${REPO}/pull/new/${BRANCH}&quot;
+      PR_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://github.com/</span><span style="color:#e6db74">${</span>GIT_USER<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span>REPO<span style="color:#e6db74">}</span><span style="color:#e6db74">/pull/new/</span><span style="color:#e6db74">${</span>BRANCH<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
 
       open $PR_URL
-}
-</code></pre>
-
-<p>Now you will have access to the <code>git_pull_request</code> command. After you pushed your changes you can use this command from anywhere in the repository and it will open your default browser with a new GitHub pull-request.</p>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Now you will have access to the <code>git_pull_request</code> command. After you pushed your changes you can use this command from anywhere in the repository and it will open your default browser with a new GitHub pull-request.</p>
 
             </div>
         </article>
@@ -204,7 +192,7 @@ function git_pull_request() { REPOURL=`git config --get remote.origin.url` REPO=
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2019</span>
+            <span>&copy; 2021</span>
             
             <span> <a
                     href="/posts/index.xml" target="_blank" title="rss"><svg
@@ -236,7 +224,7 @@ function git_pull_request() { REPOURL=`git config --get remote.origin.url` REPO=
 
 
 
-<script type="text/javascript" src="/bundle.min.cf7871ed49474a80ed457154d24e61f7881adbe0f9384951a74ac46b688a39a4dbfa68bc6d37baeb058186de354ead3487d4ee7f083ea4cba860c48600b694f3.js" integrity="sha512-z3hx7UlHSoDtRXFU0k5h94ga2&#43;D5OElRp0rEa2iKOaTb&#43;mi8bTe66wWBht41Tq00h9Tufwg&#43;pMuoYMSGALaU8w=="></script>
+<script type="text/javascript" src="/bundle.min.648cbdb411bb57181906d73a5e1c9f26680cde5c03e04de5350e4d20c491ff3db990efb0d71e1fd5f57604f06c78379555c7f829c9bf6c2782acfd6471867611.js" integrity="sha512-ZIy9tBG7VxgZBtc6XhyfJmgM3lwD4E3lNQ5NIMSR/z25kO&#43;w1x4f1fV2BPBseDeVVcf4Kcm/bCeCrP1kcYZ2EQ=="></script>
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
