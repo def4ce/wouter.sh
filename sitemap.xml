@@ -2,51 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/resume/</loc>
+    <loc>https://wouters.sh/resume/</loc>
     <lastmod>2021-11-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/cli/</loc>
+    <loc>https://wouters.sh/tags/cli/</loc>
     <lastmod>2019-07-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/git/</loc>
+    <loc>https://wouters.sh/tags/git/</loc>
     <lastmod>2019-07-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/professional/pull-request-from-cli/</loc>
+    <loc>https://wouters.sh/posts/professional/pull-request-from-cli/</loc>
     <lastmod>2019-07-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/os-x/</loc>
+    <loc>https://wouters.sh/tags/os-x/</loc>
     <lastmod>2019-07-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/</loc>
+    <loc>https://wouters.sh/posts/</loc>
     <lastmod>2019-07-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>https://wouters.sh/tags/</loc>
     <lastmod>2019-07-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/</loc>
+    <loc>https://wouters.sh/</loc>
     <lastmod>2019-07-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/professional/git-ignore-from-cli/</loc>
+    <loc>https://wouters.sh/posts/professional/git-ignore-from-cli/</loc>
     <lastmod>2019-07-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/aws/</loc>
+    <loc>https://wouters.sh/tags/aws/</loc>
     <lastmod>2019-07-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/professional/aws-disable-ssh/</loc>
+    <loc>https://wouters.sh/posts/professional/aws-disable-ssh/</loc>
     <lastmod>2019-07-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/linux/</loc>
+    <loc>https://wouters.sh/tags/linux/</loc>
     <lastmod>2019-07-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/posts/professional/setting-up-ssh-server-proxy/</loc>
+    <loc>https://wouters.sh/posts/professional/setting-up-ssh-server-proxy/</loc>
     <lastmod>2019-07-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/ssh/</loc>
+    <loc>https://wouters.sh/tags/ssh/</loc>
     <lastmod>2019-07-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/about/</loc>
+    <loc>https://wouters.sh/about/</loc>
     <lastmod>2019-05-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>https://wouters.sh/categories/</loc>
   </url>
 </urlset>

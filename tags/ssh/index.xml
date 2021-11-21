@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ssh on Wouter in &#39;t Veld</title>
-    <link>/tags/ssh/</link>
+    <link>https://wouters.sh/tags/ssh/</link>
     <description>Recent content in ssh on Wouter in &#39;t Veld</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>Wouter in &#39;t Veld</copyright>
-    <lastBuildDate>Tue, 09 Jul 2019 00:00:00 +0000</lastBuildDate><atom:link href="/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Jul 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://wouters.sh/tags/ssh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Setting up an SSH server as a proxy</title>
-      <link>/posts/professional/setting-up-ssh-server-proxy/</link>
+      <link>https://wouters.sh/posts/professional/setting-up-ssh-server-proxy/</link>
       <pubDate>Tue, 09 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>/posts/professional/setting-up-ssh-server-proxy/</guid>
+      <guid>https://wouters.sh/posts/professional/setting-up-ssh-server-proxy/</guid>
       <description>Recently I setup an SSH server at home. This allows me, besides the obvious, to create an SSH tunnel to encrypt my connections and circumvent restrictions. This is particularly useful on public Wi-Fi networks. These networks may block certain services and other people using the network might be less friendly.
 Installing Your Linux server most likely already has openssh-server installed. If it hasn&amp;rsquo;t, installing SSH server is easy. Because I use CentOS the examples will reflect that.</description>
     </item>
