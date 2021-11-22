@@ -155,8 +155,8 @@ git config --global alias.ignore \ &#39;!gi() { curl -sL https://www.gitignore.i
 .</p>
 <p>To do this you need to create a git <a href="https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases" target="_blank">alias</a>
 .</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config --global alias.ignore <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span><span style="color:#e6db74">&#39;!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config --global alias.ignore <span style="color:#ed9d13">\
+</span><span style="color:#ed9d13"></span><span style="color:#ed9d13">&#39;!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi&#39;</span>
 </code></pre></div><p>When you created the alias you have access to the <code>git ignore</code> command. If you run <code>git ignore list</code> you will get a list of supported languages, tools, os&rsquo;s and applications.</p>
 <p>For example, running <code>git ignore python,visualstudiocode,osx</code> will dump a list of ignored files for Python, VSCode and OS X to <code>stdout</code>.</p>
 <p>If you want to create the <code>.gitignore</code> file you need to redirect the <code>git ignore</code> command.</p>

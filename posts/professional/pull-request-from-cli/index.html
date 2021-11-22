@@ -154,24 +154,24 @@ function git_pull_request() { REPOURL=`git config --get remote.origin.url` REPO=
         <p>After spending some time getting <a href="https://www.git-scm.com/docs/git-request-pull" target="_blank">git pull-request</a>
  to work I decided it was to much of a hassle and would try to make my own function.</p>
 <p>If you are on <code>OS X</code>, drop the following in your <code>.bashrc</code> or your preferred <code>$SHELL</code> equivalent and source it:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">function</span> git_pull_request<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
-      REPOURL<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>git config --get remote.origin.url<span style="color:#e6db74">`</span>
-      REPO<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>basename -s .git $REPOURL<span style="color:#e6db74">`</span>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#6ab825;font-weight:bold">function</span> git_pull_request() {
+      <span style="color:#40ffff">REPOURL</span>=<span style="color:#ed9d13">`</span>git config --get remote.origin.url<span style="color:#ed9d13">`</span>
+      <span style="color:#40ffff">REPO</span>=<span style="color:#ed9d13">`</span>basename -s .git <span style="color:#40ffff">$REPOURL</span><span style="color:#ed9d13">`</span>
 
-      BRANCH<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>git symbolic-ref -q --short HEAD<span style="color:#e6db74">`</span>
+      <span style="color:#40ffff">BRANCH</span>=<span style="color:#ed9d13">`</span>git symbolic-ref -q --short HEAD<span style="color:#ed9d13">`</span>
 
-      GIT_USER<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>git config user.name<span style="color:#e6db74">`</span> 
+      <span style="color:#40ffff">GIT_USER</span>=<span style="color:#ed9d13">`</span>git config user.name<span style="color:#ed9d13">`</span> 
 
-      <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -z $GIT_USER <span style="color:#f92672">]]</span>
-          <span style="color:#66d9ef">then</span>
-              echo <span style="color:#e6db74">&#34;Please set your Git user name by running: git config --global user.name &#39;\$USERNAME&#39;&#34;</span>
-              exit <span style="color:#ae81ff">1</span>
-      <span style="color:#66d9ef">fi</span>
+      <span style="color:#6ab825;font-weight:bold">if</span> [[ -z <span style="color:#40ffff">$GIT_USER</span> ]]
+          <span style="color:#6ab825;font-weight:bold">then</span>
+              <span style="color:#24909d">echo</span> <span style="color:#ed9d13">&#34;Please set your Git user name by running: git config --global user.name &#39;\$USERNAME&#39;&#34;</span>
+              <span style="color:#24909d">exit</span> <span style="color:#3677a9">1</span>
+      <span style="color:#6ab825;font-weight:bold">fi</span>
 
-      PR_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://github.com/</span><span style="color:#e6db74">${</span>GIT_USER<span style="color:#e6db74">}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">${</span>REPO<span style="color:#e6db74">}</span><span style="color:#e6db74">/pull/new/</span><span style="color:#e6db74">${</span>BRANCH<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+      <span style="color:#40ffff">PR_URL</span>=<span style="color:#ed9d13">&#34;https://github.com/</span><span style="color:#ed9d13">${</span><span style="color:#40ffff">GIT_USER</span><span style="color:#ed9d13">}</span><span style="color:#ed9d13">/</span><span style="color:#ed9d13">${</span><span style="color:#40ffff">REPO</span><span style="color:#ed9d13">}</span><span style="color:#ed9d13">/pull/new/</span><span style="color:#ed9d13">${</span><span style="color:#40ffff">BRANCH</span><span style="color:#ed9d13">}</span><span style="color:#ed9d13">&#34;</span>
 
-      open $PR_URL
-<span style="color:#f92672">}</span>
+      open <span style="color:#40ffff">$PR_URL</span>
+}
 </code></pre></div><p>Now you will have access to the <code>git_pull_request</code> command. After you pushed your changes you can use this command from anywhere in the repository and it will open your default browser with a new GitHub pull-request.</p>
 
       </div>

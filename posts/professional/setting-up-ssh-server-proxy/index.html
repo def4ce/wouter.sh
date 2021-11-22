@@ -153,36 +153,36 @@ Installing Your Linux server most likely already has openssh-server installed. I
 <h3 id="installing">Installing</h3>
 <p>Your Linux server most likely already has openssh-server installed. If it hasn&rsquo;t,
 installing SSH server is easy. Because I use CentOS the examples will reflect that.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo yum -y install openssh-server
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo yum -y install openssh-server
 </code></pre></div><p>Start the sshd service:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo systemctl start sshd
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo systemctl start sshd
 </code></pre></div><p>Making sure it starts when the machine boots</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo systemctl enable sshd
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo systemctl <span style="color:#24909d">enable</span> sshd
 Created symlink from /etc/systemd/system/multi-user.target.wants/sshd.service to /usr/lib/systemd/system/sshd.service.
 </code></pre></div><p>Verifying the above:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ systemctl status sshd
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ systemctl status sshd
 ● sshd.service - OpenSSH server daemon
-   Loaded: loaded <span style="color:#f92672">(</span>/usr/lib/systemd/system/sshd.service; enabled; vendor preset: enabled<span style="color:#f92672">)</span>
-   Active: active <span style="color:#f92672">(</span>running<span style="color:#f92672">)</span> since za 2017-09-09 18:18:35 UTC; 4s ago
-     Docs: man:sshd<span style="color:#f92672">(</span>8<span style="color:#f92672">)</span>
-           man:sshd_config<span style="color:#f92672">(</span>5<span style="color:#f92672">)</span>
- Main PID: <span style="color:#ae81ff">2413</span> <span style="color:#f92672">(</span>sshd<span style="color:#f92672">)</span>
+   Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; vendor preset: enabled)
+   Active: active (running) since za 2017-09-09 18:18:35 UTC; 4s ago
+     Docs: man:sshd(8)
+           man:sshd_config(5)
+ Main PID: <span style="color:#3677a9">2413</span> (sshd)
    CGroup: /system.slice/sshd.service
            └─2413 /usr/sbin/sshd -D -u0
 
-sep <span style="color:#ae81ff">09</span> 18:18:35 localhost.localdomain systemd<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span>: Starting OpenSSH server daemon...
-sep <span style="color:#ae81ff">09</span> 18:18:35 localhost.localdomain sshd<span style="color:#f92672">[</span>2413<span style="color:#f92672">]</span>: Server listening on 0.0.0.0 port 22.
-sep <span style="color:#ae81ff">09</span> 18:18:35 localhost.localdomain sshd<span style="color:#f92672">[</span>2413<span style="color:#f92672">]</span>: Server listening on :: port 22.
-sep <span style="color:#ae81ff">09</span> 18:18:35 localhost.localdomain systemd<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span>: Started OpenSSH server daemon.
+sep <span style="color:#3677a9">09</span> 18:18:35 localhost.localdomain systemd[1]: Starting OpenSSH server daemon...
+sep <span style="color:#3677a9">09</span> 18:18:35 localhost.localdomain sshd[2413]: Server listening on 0.0.0.0 port 22.
+sep <span style="color:#3677a9">09</span> 18:18:35 localhost.localdomain sshd[2413]: Server listening on :: port 22.
+sep <span style="color:#3677a9">09</span> 18:18:35 localhost.localdomain systemd[1]: Started OpenSSH server daemon.
 </code></pre></div><p>That&rsquo;s it. As a note, if you previously setup firewall rules to block incoming connections make sure to allow incoming traffic on port 22. I will post the iptables rules that I use in a moment.</p>
 <h3 id="configure-sshd">Configure sshd</h3>
 <p>Before editing <code>/etc/ssh/sshd_config</code> we need to generate an SSH key. Github has a good <a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank">tutorial</a>
  on this. Follow it to setup your SSH key. Use a different key for every machine that is going to connect to your SSH service. Once setup you can copy the key to the server with:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ssh-copy-id wouter@server
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ssh-copy-id wouter@server
 </code></pre></div><p>Replace <code>server</code> with the hostname or ipadress of your ssh server and <code>user</code> with your user. You will be prompted to login with your password before the key gets copied. When the process is finished try logging in again to verify if it&rsquo;s working. Please refer to the Github <a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/" target="_blank">tutorial</a>
  if you run in to problems.</p>
 <p>There are some configuration settings you can apply that harden your ssh service. Use your favourite editor to edit <code>/etc/ssh/sshd_config</code>, I use vi.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo vi /etc/ssh/sshd_config
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo vi /etc/ssh/sshd_config
 </code></pre></div><p>Add, edit or uncomment</p>
 <pre tabindex="0"><code>PubkeyAuthentication yes
 PasswordAuthentication no
@@ -195,15 +195,15 @@ AllowTcpForwarding yes
 To change to another port edit <code>/etc/ssh/sshd_config</code>:</p>
 <pre tabindex="0"><code>Port 12345
 </code></pre><p>Save your changes and verify the SSH configuration</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo sshd -t
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo sshd -t
 </code></pre></div><p>This should return no errors. When it doesn&rsquo;t you can restart the SSH daemon</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo systemctl restart sshd
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo systemctl restart sshd
 </code></pre></div><p>The new configuration is now active.</p>
 <h3 id="setting-up-iptables">Setting up iptables</h3>
 <p>Since I run my ssh service on the default port I am a target for <a href="https://en.wikipedia.org/wiki/Script_kiddie" target="_blank">scriptkiddies</a>
  trying to gain access to my machine. And since I want to tunnel my traffic when on public Wi-Fi I can&rsquo;t scope the access down to a few IP&rsquo;s.</p>
 <p>CentOS comes with <code>firwalld</code>. I don&rsquo;t like <code>firewalld</code> so I disable it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo systemctl stop firewalld
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo systemctl stop firewalld
 $ sudo systemctl disable firewalld
 Removed symlink /etc/systemd/system/dbus-org.fedoraproject.FirewallD1.service.
 Removed symlink /etc/systemd/system/basic.target.wants/firewalld.service.
@@ -214,42 +214,42 @@ Created symlink from /etc/systemd/system/firewalld.service to /dev/null.
 <p>A masked service is one whose unit file is a symlink to /dev/null. This makes it &ldquo;impossible&rdquo; to load the service, even if it is required by another, enabled service.</p>
 <p>When you mask a service, a symlink is created from /etc/systemd/system to /dev/null, leaving the original unit file elsewhere untouched. When you unmask a service the symlink is deleted.</p>
 <p>With <code>firewalld</code> out of the way, I can apply my iptables script to setup the firewall.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span>iptables -F                     <span style="color:#75715e"># flush rules</span>
-iptables -X                     <span style="color:#75715e"># delete user added chains</span>
-iptables -P FORWARD DROP        <span style="color:#75715e"># drop forwarding</span>
-iptables -P INPUT DROP          <span style="color:#75715e"># drop incoming</span>
-iptables -P OUTPUT ACCEPT       <span style="color:#75715e"># allow outgoing</span>
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#cd2828;font-weight:bold">#!/bin/bash
+</span><span style="color:#cd2828;font-weight:bold"></span>iptables -F                     <span style="color:#999;font-style:italic"># flush rules</span>
+iptables -X                     <span style="color:#999;font-style:italic"># delete user added chains</span>
+iptables -P FORWARD DROP        <span style="color:#999;font-style:italic"># drop forwarding</span>
+iptables -P INPUT DROP          <span style="color:#999;font-style:italic"># drop incoming</span>
+iptables -P OUTPUT ACCEPT       <span style="color:#999;font-style:italic"># allow outgoing</span>
 
-<span style="color:#75715e"># define custom chains</span>
+<span style="color:#999;font-style:italic"># define custom chains</span>
 iptables -N ssh_init
 iptables -N ssh_throttle
 
-iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT <span style="color:#75715e"># accept previously allowed traffic</span>
-iptables -A INPUT -m conntrack --ctstate INVALID -j DROP <span style="color:#75715e"># invalid packets get dropped</span>
-iptables -A INPUT -i lo -j ACCEPT <span style="color:#75715e"># allow all traffic on the loopback interface</span>
+iptables -A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT <span style="color:#999;font-style:italic"># accept previously allowed traffic</span>
+iptables -A INPUT -m conntrack --ctstate INVALID -j DROP <span style="color:#999;font-style:italic"># invalid packets get dropped</span>
+iptables -A INPUT -i lo -j ACCEPT <span style="color:#999;font-style:italic"># allow all traffic on the loopback interface</span>
 
-<span style="color:#75715e"># ssh init</span>
-iptables -A INPUT -s 0/0 -p tcp --dport <span style="color:#ae81ff">22</span> --syn -j ssh_init
-iptables -A ssh_init -m recent --name ssh_input_trap --rcheck --seconds <span style="color:#ae81ff">60</span> --hitcount <span style="color:#ae81ff">3</span> --rttl -j DROP
+<span style="color:#999;font-style:italic"># ssh init</span>
+iptables -A INPUT -s 0/0 -p tcp --dport <span style="color:#3677a9">22</span> --syn -j ssh_init
+iptables -A ssh_init -m recent --name ssh_input_trap --rcheck --seconds <span style="color:#3677a9">60</span> --hitcount <span style="color:#3677a9">3</span> --rttl -j DROP
 iptables -A ssh_init -m recent --name ssh_input_trap --set -j RETURN
 
-<span style="color:#75715e"># ssh throttle</span>
-iptables -A INPUT -s 0/0 -p tcp --dport <span style="color:#ae81ff">22</span> --syn -j ssh_throttle
-iptables -A ssh_throttle -m connlimit --connlimit-above <span style="color:#ae81ff">3</span> -j DROP
-iptables -A ssh_throttle -m limit --limit 3/m --limit-burst <span style="color:#ae81ff">1</span> -j ACCEPT
+<span style="color:#999;font-style:italic"># ssh throttle</span>
+iptables -A INPUT -s 0/0 -p tcp --dport <span style="color:#3677a9">22</span> --syn -j ssh_throttle
+iptables -A ssh_throttle -m connlimit --connlimit-above <span style="color:#3677a9">3</span> -j DROP
+iptables -A ssh_throttle -m limit --limit 3/m --limit-burst <span style="color:#3677a9">1</span> -j ACCEPT
 
 </code></pre></div><p>To make the rules persistent you need the <code>iptables-services</code> package since we disabled <code>firewalld</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ yum -y install iptables-services
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ yum -y install iptables-services
 </code></pre></div><p>After installation you can run</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo service iptables save
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ sudo service iptables save
 </code></pre></div><blockquote>
 <p>note: If you run <code>docker</code> restart the docker service first before saving the rules. This will recreate the docker iptables rules</p>
 </blockquote>
 <p>These rules set the policy to drop all incoming packets except for the SYN packet on port 22. A SYN starts a connection, you&rsquo;ll usually only see it when the connection&rsquo;s being established. When someone sends three SYN packets in a minute, they get dropped. When they make more than three connections in a minute, they will get dropped. When the SYN is accepted a connection is established and the traffic will be allowed.</p>
 <p>With these rules in place we can start using our SSH service.</p>
 <h3 id="setting-up-an-ssh-tunnel">Setting up an SSH tunnel</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ssh -D <span style="color:#ae81ff">3000</span> -f -C -q -N wouter@miles
+<div class="highlight"><pre tabindex="0" style="color:#d0d0d0;background-color:#202020;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ssh -D <span style="color:#3677a9">3000</span> -f -C -q -N wouter@miles
 </code></pre></div><p>Let see what this command does.<br>
 <code>-D 3000</code> This allocates a socket to listen on port 3000.<br>
 <code>-f</code> Requests ssh to go to background just before command execution. <br>
