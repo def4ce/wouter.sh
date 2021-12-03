@@ -1,12 +1,9 @@
 +++
-title = "About"
-date = "2019-05-02"
+title = "About me"
+date = "2021-22-11"
 +++
 
-Hey internet, welcome to my blog.  
-  
-My name is Wouter and I'm Cloud Engineer at Coolblue, building a cloud platform for our developers to deploy their apps on.
-  
-I am also father to Sid and Fay, partner to Donna. I love music and playing games, both tabletop and video.
-  
-The point of this blog is to improve my writing skill, try to be more extrovert while  providing some useful technical information and a place for my resume.
+Hey internet 👋️  
+I am a Cloud Engineer designing, building and maintaining highly available, scalable and resilient cloud solutions for [KNMI](https://www.knmi.nl) in [Amazon Web Services](https://aws.amazon.com/).  
+
+My background is in operations, managing complex environments with unique requirements

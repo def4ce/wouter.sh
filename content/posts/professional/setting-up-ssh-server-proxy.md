@@ -1,7 +1,7 @@
 +++
 title = "Setting up an SSH server as a proxy"
 date = "2019-07-09"
-categorie = "linux"
+category = "linux"
 tags = ["linux", "ssh"]
 +++
 
@@ -46,7 +46,7 @@ Before editing `/etc/ssh/sshd_config` we need to generate an SSH key. Github has
 ```bash
 $ ssh-copy-id wouter@server
 ```
-Replace `server` with the hostname or ipadress of your ssh server and `user` with your user. You will be prompted to login with your password before the key gets copied. When the process is finished try logging in again to verify if it's working. Please refer to the Github [tutorial](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) if you run in to problems.
+Replace `server` with the hostname or ipaddress of your ssh server and `user` with your user. You will be prompted to login with your password before the key gets copied. When the process is finished try logging in again to verify if it's working. Please refer to the Github [tutorial](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) if you run in to problems.
 
 There are some configuration settings you can apply that harden your ssh service. Use your favourite editor to edit `/etc/ssh/sshd_config`, I use vi.
 ```bash
