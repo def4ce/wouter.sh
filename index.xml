@@ -65,15 +65,14 @@ Installing Your Linux server most likely already has openssh-server installed. I
     </item>
     
     <item>
-      <title>About</title>
+      <title>About me</title>
       <link>https://wouters.sh/about/</link>
-      <pubDate>Thu, 02 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://wouters.sh/about/</guid>
-      <description>Hey internet, welcome to my blog.
-My name is Wouter and I&amp;rsquo;m Cloud Engineer at Coolblue, building a cloud platform for our developers to deploy their apps on.
-I am also father to Sid and Fay, partner to Donna. I love music and playing games, both tabletop and video.
-The point of this blog is to improve my writing skill, try to be more extrovert while providing some useful technical information and a place for my resume.</description>
+      <description>Hey internet 👋️
+I am a Cloud Engineer designing, building and maintaining highly available, scalable and resilient cloud solutions for KNMI in Amazon Web Services .
+My background is in operations, managing complex environments with unique requirements</description>
     </item>
     
   </channel>
