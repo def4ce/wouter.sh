@@ -20,10 +20,10 @@ publishDir   = "public"
 
   # Metadata mostly used in document's head
   description     = "Resume Wouter in 't Veld"
-  keywords        = "resume, homepage, blog, cloud, development, programming"
+  keywords        = "resume, homepage, blog, cloud, development, serverless"
   images          = [""]
 
-  homeSubtitle   = "Cloud Engineer @ MyParcel.nl"
+  homeSubtitle   = "Senior Cloud Engineer @ MyParcel.nl"
 
   # Directory name of your blog content (default is `content/posts`)
   contentTypeName = "posts"
