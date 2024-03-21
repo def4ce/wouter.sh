@@ -1,9 +1,10 @@
 baseurl      = "https://wouters.sh"
+title        = "Wouter in 't Veld"
 languageCode = "en-us"
 theme        = "hello-friend-ng"
 
 PygmentsCodeFences = true
-PygmentsStyle = "native"
+PygmentsStyle = "monokai"
 
 archetypeDir = "archetypes"
 contentDir   = "content"
@@ -18,75 +19,72 @@ publishDir   = "public"
   dateformNumTime = "2006-01-02 15:04 -0700"
 
   # Metadata mostly used in document's head
-  description     = "Homepage and blog by Wouter in 't Veld"
-  keywords        = "homepage, blog, cloud, development, programming"
+  description     = "Resume Wouter in 't Veld"
+  keywords        = "resume, homepage, blog, cloud, development, programming"
   images          = [""]
 
+  homeSubtitle   = "Cloud Engineer @ MyParcel.nl"
 
   # Directory name of your blog content (default is `content/posts`)
   contentTypeName = "posts"
-  # Default theme "light" or "dark"
   defaultTheme = "dark"
   enableThemeToggle = true
 
   [params.logo]
-      logoMark     = "#"
-      logoText     = "./wouter.sh"
-      logoHomeLink = "/"
+    logoMark     = "#"
+    logoText     = "./wouter.sh"
+    logoHomeLink = "/"
 
   [params.footer]
-      trademark = false
-      rss = false
-      copyright = false
-      author = false
+    trademark = false
+    rss = false
+    copyright = false
+    author = false
 
-      topText = []
-      bottomText = [
-        "Powered by ☁️",
-      ]
+    topText = []
+    bottomText = [
+      "Powered by ☁️",
+    ]
 
   # Social icons
   [[params.social]]
-      name = "twitter"
-      url  = "https://twitter.com/wouterintveld"
+    name = "github"
+    url  = "https://github.com/wouter-intveld"
 
   [[params.social]]
-      name = "email"
-      url  = "mailto:hashbang@wouter.sh"
+    name = "email"
+    url  = "mailto:hashbang@wouter.sh"
 
   [[params.social]]
-      name = "github"
-      url  = "https://github.com/wouter-intveld"
+    name = "twitter"
+    url  = "https://twitter.com/wouterintveld"
 
-  [[params.social]]
-      name = "linkedin"
-      url  = "https://www.linkedin.com/in/wouterintveld"
+  # [[params.social]]
+  #     name = "linkedin"
+  #     url  = "https://www.linkedin.com/in/wouterintveld"
 
-  [[params.social]]
-      name = "gitlab"
-      url  = "https://gitlab.com/wouter-intveld"
+  # [[params.social]]
+  #     name = "gitlab"
+  #     url  = "https://gitlab.com/wouter-intveld"
 
   # [[params.social]]
   #     name = "instagram"
   #     url  = "https://www.instagram.com/def4ce/"
 
-  # [[params.social]]
-  #     name = "steam"
-  #     url  = "https://steamcommunity.com/id/deface/"
+  [[params.social]]
+    name = "steam"
+    url  = "https://steamcommunity.com/id/deface/"
 
   [languages]
-      [languages.en]
-          title          = "Wouter in 't Veld"
-          homeSubtitle   = "Cloud Engineer"
-          subtitle       = "Cloud Engineer @ KNMI. Father of Sid and Fay. Partner of Donna."
-          keywords       = ""
-          copyright      = "Wouter in 't Veld"
-          readOtherPosts = "Read other posts"
+    [languages.en.params]
+      subtitle       = "Cloud Engineer @ MyParcel.nl"
+      keywords       = ""
+      copyright      = "Wouter in 't Veld"
 
 [menu]
 [[menu.main]]
   identifier = "resume"
-  name       = "Resume"
+  name       = "resume"
   url        = "resume/"
   weight     = "2"
 # [[menu.main]]
