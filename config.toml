@@ -4,7 +4,6 @@ languageCode = "en-us"
 theme        = "hermit-v2"
 
 PygmentsCodeFences = true
-PygmentsStyle = "monokai"
 
 archetypeDir = "archetypes"
 contentDir   = "content"
@@ -23,57 +22,20 @@ publishDir   = "public"
   keywords        = "resume, homepage, blog, cloud, development, serverless"
   images          = [""]
 
-  homeSubtitle   = "Senior Cloud Engineer @ MyParcel.nl"
+  homeSubtitle    = "Senior Cloud Engineer @ MyParcel.nl"
+  footerCopyright = "Powered by ☁️"
 
-  # Directory name of your blog content (default is `content/posts`)
-  contentTypeName = "posts"
-  defaultTheme = "dark"
-  enableThemeToggle = true
-
-  [params.logo]
-    logoMark     = "#"
-    logoText     = "./wouter.sh"
-    logoHomeLink = "/"
-
-  [params.footer]
-    trademark = false
-    rss = false
-    copyright = false
-    author = false
-
-    topText = []
-    bottomText = [
-      "Powered by ☁️",
-    ]
-
-  # Social icons
-  [[params.social]]
+  [[params.socialLinks]]
     name = "github"
     url  = "https://github.com/wouter-intveld"
 
-  [[params.social]]
+  [[params.socialLinks]]
     name = "email"
     url  = "mailto:hashbang@wouter.sh"
 
-  [[params.social]]
-    name = "twitter"
+  [[params.socialLinks]]
+    name = "x"
     url  = "https://twitter.com/wouterintveld"
-
-  # [[params.social]]
-  #     name = "linkedin"
-  #     url  = "https://www.linkedin.com/in/wouterintveld"
-
-  # [[params.social]]
-  #     name = "gitlab"
-  #     url  = "https://gitlab.com/wouter-intveld"
-
-  # [[params.social]]
-  #     name = "instagram"
-  #     url  = "https://www.instagram.com/def4ce/"
-
-  [[params.social]]
-    name = "steam"
-    url  = "https://steamcommunity.com/id/deface/"
 
   [languages]
     [languages.en.params]
@@ -87,13 +49,3 @@ publishDir   = "public"
   name       = "resume"
   url        = "resume/"
   weight     = "2"
-# [[menu.main]]
-#     identifier = "about"
-#     name       = "About"
-#     url        = "/about"
-#     weight     = "3"
-# [[menu.main]]
-#     identifier = "blog"
-#     name       = "Blog"
-#     url        = "/posts"
-#     weight     = "1"
