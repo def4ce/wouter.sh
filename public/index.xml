@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wouter in &#39;t Veld</title>
+    <link>https://wouters.sh/</link>
+    <description>Recent content on Wouter in &#39;t Veld</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 21 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://wouters.sh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://wouters.sh/resume/</link>
+      <pubDate>Thu, 21 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://wouters.sh/resume/</guid>
+      <description>Wouter in &amp;rsquo;t Veld Experienced Cloud Engineer designing, building and maintaining highly available, scalable and resilient cloud solutions for MyParcel in Amazon Web Services .&#xA;email: hashbang@wouter.sh twitter: @wouterintveld Experience Senior Cloud Engineer @ KNMI Aug. 2020 - May 2023&#xA;Focused on coaching team members on cloud best practices. Designing CI/CD building blocks to make deploying applications to Amazon Web Services easy.&#xA;My team designs, builds and maintains the Cloud Landing Zone.</description>
+    </item>
+    <item>
+      <title>Open a pull-request to GitHub from the CLI</title>
+      <link>https://wouters.sh/posts/professional/pull-request-from-cli/</link>
+      <pubDate>Wed, 24 Jul 2019 00:00:00 +0000</pubDate>
+      <guid>https://wouters.sh/posts/professional/pull-request-from-cli/</guid>
+      <description>After spending some time getting git pull-request to work I decided it was to much of a hassle and would try to make my own function.&#xA;If you are on OS X, drop the following in your .bashrc or your preferred $SHELL equivalent and source it:&#xA;function git_pull_request() { REPOURL=`git config --get remote.origin.url` REPO=`basename -s .git $REPOURL` BRANCH=`git symbolic-ref -q --short HEAD` GIT_USER=`git config user.name` if [[ -z $GIT_USER ]] then echo &amp;#34;Please set your Git user name by running: git config --global user.</description>
+    </item>
+    <item>
+      <title>Generate .gitignore from the command line</title>
+      <link>https://wouters.sh/posts/professional/git-ignore-from-cli/</link>
+      <pubDate>Tue, 16 Jul 2019 00:00:00 +0000</pubDate>
+      <guid>https://wouters.sh/posts/professional/git-ignore-from-cli/</guid>
+      <description>You can generate .gitignore files from the command line by using the api of gitignore.io .&#xA;To do this you need to create a git alias .&#xA;git config --global alias.ignore \ &amp;#39;!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi&amp;#39; When you created the alias you have access to the git ignore command. If you run git ignore list you will get a list of supported languages, tools, os&amp;rsquo;s and applications.</description>
+    </item>
+    <item>
+      <title>Disable SSH on your EC2 instances</title>
+      <link>https://wouters.sh/posts/professional/aws-disable-ssh/</link>
+      <pubDate>Sun, 14 Jul 2019 00:00:00 +0000</pubDate>
+      <guid>https://wouters.sh/posts/professional/aws-disable-ssh/</guid>
+      <description>If you have to SSH into your servers, then your automation has failed.&#xA;I know, crazy&amp;hellip;&#xA;To make the transition to this mindset easier you could just disable access to port 22 in your instance security group configuration. This will highlight the things you still need to automate while still having the ability to enable access your instances to remedy immediate operational issues.&#xA;Disabling inbound SSH will stop you from cheating.</description>
+    </item>
+    <item>
+      <title>Setting up an SSH server as a proxy</title>
+      <link>https://wouters.sh/posts/professional/setting-up-ssh-server-proxy/</link>
+      <pubDate>Tue, 09 Jul 2019 00:00:00 +0000</pubDate>
+      <guid>https://wouters.sh/posts/professional/setting-up-ssh-server-proxy/</guid>
+      <description>Recently I setup an SSH server at home. This allows me, besides the obvious, to create an SSH tunnel to encrypt my connections and circumvent restrictions. This is particularly useful on public Wi-Fi networks. These networks may block certain services and other people using the network might be less friendly.&#xA;Installing Your Linux server most likely already has openssh-server installed. If it hasn&amp;rsquo;t, installing SSH server is easy. Because I use CentOS the examples will reflect that.</description>
+    </item>
+    <item>
+      <title>About me</title>
+      <link>https://wouters.sh/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://wouters.sh/about/</guid>
+      <description>Hey internet 👋️&#xA;I am a Cloud Engineer designing, building and maintaining highly available, scalable and resilient cloud solutions for KNMI in Amazon Web Services .&#xA;My background is in operations, managing complex environments with unique requirements</description>
+    </item>
+  </channel>
+</rss>
