@@ -1,7 +1,7 @@
 baseurl      = "https://wouters.sh"
 title        = "Wouter in 't Veld"
 languageCode = "en-us"
-theme        = "hello-friend-ng"
+theme        = "hermit-v2"
 
 PygmentsCodeFences = true
 PygmentsStyle = "monokai"
