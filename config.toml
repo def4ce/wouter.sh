@@ -4,12 +4,11 @@ languageCode = "en-us"
 theme        = "hermit-v2"
 
 PygmentsCodeFences = true
+rssLimit           = 0
+copyright          = false
 
-archetypeDir = "archetypes"
-contentDir   = "content"
-dataDir      = "data"
-layoutDir    = "layouts"
-publishDir   = "public"
+[params.author]
+  name = "Wouter in 't Veld"
 
 [params]
   dateform        = "Jan 2, 2006"
@@ -36,12 +35,6 @@ publishDir   = "public"
   [[params.socialLinks]]
     name = "x"
     url  = "https://twitter.com/wouterintveld"
-
-  [languages]
-    [languages.en.params]
-      subtitle       = "Cloud Engineer @ MyParcel.nl"
-      keywords       = ""
-      copyright      = "Wouter in 't Veld"
 
 [menu]
 [[menu.main]]
