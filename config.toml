@@ -5,7 +5,6 @@ theme        = "hermit-v2"
 
 PygmentsCodeFences = true
 rssLimit           = 0
-copyright          = false
 
 [params.author]
   name = "Wouter in 't Veld"
