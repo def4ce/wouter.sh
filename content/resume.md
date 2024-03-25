@@ -4,80 +4,57 @@ date = "2024-03-21"
 
 # Wouter in 't Veld
 
-_Experienced Cloud Engineer designing, building and maintaining highly available, scalable and resilient cloud solutions for [MyParcel](https://www.myparcel.nl) on [Amazon Web Services](https://aws.amazon.com/)._
+_Experienced Cloud Engineer focused on designing, building, and maintaining highly available, scalable, and resilient cloud solutions for [MyParcel](https://www.myparcel.nl) using [Amazon Web Services](https://aws.amazon.com/)._
 
 ```
-email:    hashbang@wouter.sh
-twitter:  @wouterintveld
+email:   hashbang@wouter.sh
+twitter: @wouterintveld
 ```
 
 ## Experience
 
 **Senior Cloud Engineer @ [KNMI](https://www.knmi.nl)** `Aug. 2020 - May 2023`  
-_Focused on coaching team members on cloud best practices. Designing CI/CD building blocks to make deploying applications to Amazon Web Services easy._
+_Led the Cloud Engineering team in establishing best practices for cloud deployments. Spearheaded the design of CI/CD frameworks to streamline application deployment on Amazon Web Services._
 
-_My team designs, builds and maintains the Cloud Landing Zone. We do everything from code. From setting up the initial infrastructure to the deployment pipelines. Everything is automated, fault tolerant, scalable and highly available._
+Key Contributions:
 
-- Assisting teams in debugging and resolving application issues.
-- Assisting teams in migrating their applications from on-site to AWS.
-- Automating the deployment process for infrastructure and applications.
-- Building and automating software release pipelines.
-- Coaching team members.
-- Communicating effectively with teams and business stakeholders.
-- Improving speed, quality and overall performance of the deployment process.
-- Make sure designed systems that will scale far into the future.
-- Researching, evaluating and recommending on new technologies and processes.
-- Using monitoring tools to measure and improve application and system performance.
+- Coached team members on cloud best practices and led the development of the Cloud Landing Zone, emphasizing code-driven infrastructure setup and automation for deployment pipelines, ensuring fault tolerance, scalability, and high availability.
+- Assisted teams in migrating to AWS, resolving application issues, and automating both infrastructure and application deployment processes.
+- Enhanced the speed, quality, and efficiency of deployment processes through effective communication with stakeholders and the introduction of innovative technologies and monitoring tools.
 
 **Senior Cloud Engineer @ [Coolblue](https://www.coolblue.nl)** `Oct. 2015 - Jul. 2020`  
-_Focused on enabling developers. Designing and building a platform that makes it easy to deploy applications on Amazon Web Services._
+_Pioneered the creation of a developer-centric platform on AWS, facilitating easy application deployment and maintenance._
 
-_My team designs, builds and maintains the foundation of the platform. We do everything from code. From setting up the initial infrastructure to the deployment pipelines. Everything is automated, fault tolerant, scalable and highly available._
+Key Contributions:
 
-- Building and automating software release pipelines.
-- Assisting developers in migrating their applications from on-site to AWS.
-- Improving speed, quality and overall performance of the deployment process.
-- Make sure designed systems that will scale far into the future.
-- Using monitoring tools to measure and improve application and system performance.
-- Assisting developers in debugging and resolving application issues.
-- Automating the deployment process for infrastructure and applications.
-- Communicating effectively with developers, operations and business stakeholders.
-- Researching, evaluating and recommending on new technologies and processes.
-- Evaluating and implementing platform agnostic solutions for deploying applications to the cloud.
-- Utilizing programming language such as Python and PowerShell.
-- Using product technologies such as Splunk, Datadog, Ansible, Packer, TeamCity, Octopus Deploy, Github for providing effective solutions.
+- Designed and maintained the platform's foundational infrastructure and deployment pipelines, focusing on automation, fault tolerance, scalability, and high availability.
+- Guided developers through the migration process, optimizing deployment processes, and leveraging monitoring tools to enhance application and system performance.
+- Fostered effective communication across development, operations, and business teams, and evaluated new technologies to recommend platform-agnostic solutions.
 
 **Senior System Engineer @ [het Oogziekenhuis Rotterdam](https://www.oogziekenhuis.nl)** `Oct. 2008 – Sep. 2015`  
-_Focused on technical implementation of ICT projects. Administration of the running systems. Third line support for medical staff. Technical spokesperson for external parties._
+_Focused on the technical implementation of ICT projects, system administration, and providing advanced support for medical staff. Acted as a technical liaison with external parties._
 
 ### Past Experience
 
-**All-round Engineer @ UNC Detachering** `Mar. 2007 – Dec. 2007`  
-_Engineer at several customers_
-
-**Implementation Coordinator @ KPN Internet Solutions** `Dec. 2004 – Mar. 2007`  
-_Supporting Field Engineers when encountering issues when setting up internet connectivity at corporate customers._
-
-**Migration Coordinator @ KPN Internet Solutions** `May 2004 – Nov. 2004`  
-_Migration of internet connections of KPN’s business customers. Solve problems encountered during these migrations._
-
-**Application Manager @ de Gemeente Dordrecht** `Dec. 2000 – Mar. 2004`  
-_Manage the IT ticket system and support engineer._
-
-**All-round Engineer @ Futureline Communications** `Jan. 1999 – Jan. 2000`  
-_Engineer at several customers._
+- **All-round Engineer @ UNC Detachering** `Mar. 2007 – Dec. 2007`
+- **Implementation Coordinator @ KPN Internet Solutions** `Dec. 2004 – Mar. 2007`
+- **Migration Coordinator @ KPN Internet Solutions** `May 2004 – Nov. 2004`
+- **Application Manager @ de Gemeente Dordrecht** `Dec. 2000 – Mar. 2004`
+- **All-round Engineer @ Futureline Communications** `Jan. 1999 – Jan. 2000`
 
 ## Technical Experience
 
-**Technologies:**  
-Ansible, AWS CDK, AWS CloudFormation, AWS CloudFront, AWS CloudTrail, AWS CloudWatch, AWS CodeDeploy, AWS Cognito, AWS DataSync, AWS EC2, AWS ECS, AWS IAM, AWS Lambda, AWS OpenSearch, AWS RDS, AWS S3,AWS SNS, Bash, CentOS, Datadog, Docker, Git, GitLab CI, GoLang, Linux, Octopus Deploy, Packer, Powershell, Puppet, Python, Splunk, Teamcity, Vault, Windows Server 2016.
+**Technologies:**
+AWS (CDK, CloudFormation, CloudFront, CloudTrail, CloudWatch, CodeDeploy, Cognito, DataSync, EC2, ECS, IAM, Lambda, OpenSearch, RDS, S3, SNS), Ansible, Bash, CentOS, Datadog, Docker, Git, GitLab CI, GoLang, Linux, Octopus Deploy, Packer, PowerShell, Puppet, Python, Splunk, TeamCity, Vault, Windows Server 2016.
 
-**Programming/Scripting Languages:**  
-We write our tooling and Lambda's in _Python_.  
-Using _Bash_ to create deploy scripts to be used in CI/CD.  
-Basic knowledge of _GoLang_.
+**Programming/Scripting Languages:**
+
+- Primary: _Python_ for tooling and AWS Lambda functions.
+- Secondary: _Bash_ for CI/CD deployment scripts.
+- Basic knowledge of _GoLang_.
 
 ## Extra
 
-**Human Languages:**  
-I am fluent in _English_ and _Dutch_.
+**Human Languages:**
+
+- Fluent in _English_ and _Dutch_.
