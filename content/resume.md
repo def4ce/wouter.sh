@@ -44,17 +44,44 @@ _Focused on the technical implementation of ICT projects, system administration,
 
 ## Technical Experience
 
-**Technologies:**
-AWS (CDK, CloudFormation, CloudFront, CloudTrail, CloudWatch, CodeDeploy, Cognito, DataSync, EC2, ECS, IAM, Lambda, OpenSearch, RDS, S3, SNS), Ansible, Bash, CentOS, Datadog, Docker, Git, GitLab CI, GoLang, Linux, Octopus Deploy, Packer, PowerShell, Puppet, Python, Splunk, TeamCity, Vault, Windows Server 2016.
+**Cloud Technologies & Services:**
 
-**Programming/Scripting Languages:**
+- AWS: Comprehensive expertise across a broad range of services including compute, storage, database, networking, and security (e.g., CDK, EC2, S3, RDS, Lambda, IAM, CloudFormation, CloudFront)
 
-- Primary: _Python_ for tooling and AWS Lambda functions.
-- Secondary: _Bash_ for CI/CD deployment scripts.
-- Basic knowledge of _GoLang_.
+**Configuration Management & Automation:**
+
+- Ansible, Puppet
+
+**Containerization & Orchestration:**
+
+- Docker, AWS ECS
+
+**Scripting & Programming Languages:**
+
+- TypeScript, Python, Bash, PowerShell
+
+**Continuous Integration & Continuous Deployment (CI/CD):**
+
+- GitHub Actions, GitLab CI, Jenkins, TeamCity, Octopus Deploy
+
+**Monitoring & Logging:**
+
+- New Relic, Datadog, Splunk, AWS CloudWatch
+
+**Version Control:**
+
+- Git
+
+**Operating Systems:**
+
+- Linux, Windows
+
+**Miscellaneous Tools:**
+
+- Vault, Packer
 
 ## Extra
 
-**Human Languages:**
+**Languages:**
 
 - Fluent in _English_ and _Dutch_.
