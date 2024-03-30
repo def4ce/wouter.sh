@@ -20,7 +20,7 @@ Key Contributions:
 
 - Coached team members on cloud best practices and led the development of the Cloud Landing Zone, emphasizing code-driven infrastructure setup and automation for deployment pipelines, ensuring fault tolerance, scalability, and high availability.
 - Assisted teams in migrating to AWS, resolving application issues, and automating both infrastructure and application deployment processes.
-- Enhanced the speed, quality, and efficiency of deployment processes through effective communication with stakeholders and the introduction of innovative technologies and monitoring tools.
+- By facilitating effective communication with stakeholders, the team was able to identify and swiftly integrate innovative technologies and monitoring tools. This collaborative effort directly led to enhancements in the speed, quality, and efficiency of our deployment processes.
 
 **Senior Cloud Engineer @ [Coolblue](https://www.coolblue.nl)** `Oct. 2015 - Jul. 2020`  
 _Pioneered the creation of a developer-centric platform on AWS, facilitating easy application deployment and maintenance._
@@ -54,7 +54,7 @@ _Focused on the technical implementation of ICT projects, system administration,
 
 **Containerization & Orchestration:**
 
-- Docker, AWS ECS
+- Docker, AWS ECS, AWS Fargate
 
 **Scripting & Programming Languages:**
 
