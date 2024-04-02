@@ -13,6 +13,15 @@ twitter: @wouterintveld
 
 ## Experience
 
+**Senior Cloud Engineer @ [MyParcel](https://www.myparcel.nl)** `June 2023 - Present`  
+_Transforming business needs into robust and scalable cloud architectures. Driving innovation and efficiency across all cloud computing efforts within the organization._
+
+Key Contributions:
+
+- Engineering a secure and compliant multi-account AWS environment through the implementation of AWS Control Tower and AWS Organizations, establishing a robust cloud foundation.
+- Automated application and infrastructure deployments with the creation of CI/CD pipelines using GitHub Actions, enhancing operational efficiency and reliability.
+- Advanced the adoption of Infrastructure as Code (IaC) practices among development teams by leveraging AWS Cloud Development Kit (CDK), streamlining infrastructure management and deployment processes.
+
 **Senior Cloud Engineer @ [KNMI](https://www.knmi.nl)** `Aug. 2020 - May 2023`  
 _Led the Cloud Engineering team in establishing best practices for cloud deployments. Spearheaded the design of CI/CD frameworks to streamline application deployment on Amazon Web Services._
 
