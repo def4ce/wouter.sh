@@ -49,3 +49,8 @@ rssLimit           = 0
   name       = "about"
   url        = "about/"
   weight     = "2"
+[[menu.main]]
+  identifier = "posts"
+  name       = "posts"
+  url        = "posts/"
+  weight     = "3"

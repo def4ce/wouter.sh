@@ -1,0 +1,62 @@
+// Registration to reload flow for the self-service routes post.
+// Render: dot -Tsvg flow.dot -o flow.svg
+// Colors follow the site's Gruvbox dark theme; the canvas is transparent.
+digraph G {
+    rankdir=TB;
+    bgcolor="transparent";
+    pad=0.3;
+    nodesep=0.4;
+    ranksep=0.45;
+    fontname="Trebuchet MS,Verdana,sans-serif";
+    fontsize=12;
+    node [fontname="Trebuchet MS,Verdana,sans-serif", fontsize=12, shape=box,
+          style="rounded,filled", fillcolor="#3c3836", color="#a89984",
+          fontcolor="#ebdbb2"];
+    edge [fontname="Trebuchet MS,Verdana,sans-serif", fontsize=11,
+          color="#a89984", fontcolor="#d5c4a1"];
+
+    team [label="Team's service stack\ndeclares routes + limits",
+          fillcolor="#fe8019", color="#fe8019", fontcolor="#1d2021"];
+
+    subgraph cluster_control {
+        label="Control path (gateway account)";
+        style="rounded,filled";
+        color="#665c54";
+        fillcolor="#32302f";
+        labeljust=l;
+        fontcolor="#d5c4a1";
+
+        register  [label="Registration function\ncheck entry, claim host + prefix"];
+        registry  [label="Registry table\n(desired state)", shape=cylinder, style=filled];
+        reconcile [label="Reconciler, one run at a time\nre-read everything, render"];
+        validate  [label="Validate\nchecks + envoy --mode validate"];
+        lastgood  [label="Publish nothing\nkeep last good, save render, alarm",
+                   fillcolor="#282828", color="#928374", fontcolor="#928374"];
+        bucket    [label="Versioned config bucket\nclusters, routes, limits", shape=cylinder, style=filled];
+    }
+
+    subgraph cluster_data {
+        label="Each proxy task";
+        style="rounded,filled";
+        color="#665c54";
+        fillcolor="#32302f";
+        labeljust=l;
+        fontcolor="#d5c4a1";
+
+        sidecar [label="Sidecar\npoll version, write tmp, rename"];
+        envoy   [label="Envoy\nreloads on file move"];
+    }
+
+    rls [label="Rate-limit service\n(own sidecar, same reload)"];
+
+    team -> register [label=" deploy"];
+    register -> registry [label=" one transaction"];
+    registry -> reconcile [label=" change stream\n+ every minute"];
+    reconcile -> validate;
+    validate -> bucket [label=" valid", color="#8ec07c", fontcolor="#8ec07c"];
+    validate -> lastgood [label=" invalid", color="#928374", fontcolor="#928374", style=dashed];
+    bucket -> sidecar [label=" new version"];
+    sidecar -> envoy [label=" shared volume"];
+    bucket -> rls [label=" new version"];
+    envoy -> rls [label=" limit check\n(fails open)", style=dashed];
+}
