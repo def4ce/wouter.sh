@@ -1,4 +1,4 @@
-baseurl      = "https://wouters.sh"
+baseurl      = "https://wouter.sh"
 title        = "Wouter in 't Veld"
 languageCode = "en-us"
 theme        = "hermit-v2"
