@@ -20,7 +20,7 @@ rssLimit           = 0
   keywords        = "resume, homepage, blog, cloud, development, serverless"
   images          = [""]
 
-  homeSubtitle    = "Senior Cloud Engineer @ MyParcel.nl"
+  homeSubtitle    = "Senior Platform Engineer @ MyParcel.nl"
   footerCopyright = "Powered by ☁️"
 
   [[params.socialLinks]]

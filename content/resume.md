@@ -1,49 +1,55 @@
 +++
-date = "2024-03-21"
+date = "2026-10-11"
 +++
 
 # Wouter in 't Veld
 
-_Experienced Cloud Engineer focused on designing, building, and maintaining highly available, scalable, and resilient cloud solutions for [MyParcel](https://www.myparcel.nl) using [Amazon Web Services](https://aws.amazon.com/)._
+_Platform engineer at [MyParcel](https://www.myparcel.nl). I build and run the [AWS](https://aws.amazon.com/) platform our product teams deploy to: accounts, deploy pipelines, DNS, networking, and the shared infrastructure code that ties it together._
 
 ```
 email:   hashbang@wouter.sh
+github:  github.com/wouter-intveld
 twitter: @wouterintveld
 ```
 
 ## Experience
 
-**Senior Cloud Engineer @ [MyParcel](https://www.myparcel.nl)** `June 2023 - Present`  
-_Transforming business needs into robust and scalable cloud architectures. Driving innovation and efficiency across all cloud computing efforts within the organization._
+**Senior Platform Engineer @ [MyParcel](https://www.myparcel.nl)** `June 2023 - Present`  
+_Part of the cloud engineering team. Most of my work is infrastructure in TypeScript and AWS CDK, shipped through GitHub Actions._
 
-Key Contributions:
+What I worked on:
 
-- Engineering a secure and compliant multi-account AWS environment through the implementation of AWS Control Tower and AWS Organizations, establishing a robust cloud foundation.
-- Automated application and infrastructure deployments with the creation of CI/CD pipelines using GitHub Actions, enhancing operational efficiency and reliability.
-- Advanced the adoption of Infrastructure as Code (IaC) practices among development teams by leveraging AWS Cloud Development Kit (CDK), streamlining infrastructure management and deployment processes.
+- Designed and built the Envoy private gateway, which now runs in acceptance and production. Traffic goes through CloudFront and WAF to Envoy on ECS Fargate, then on to private API Gateways. Teams register their own routes and rate limits with a CDK construct, without touching the gateway repository. A reconciler turns those registrations into Envoy config, and Envoy picks it up without a restart.
+- Moved the shared `api.myparcel.nl` DNS zones into a new dns-service, driven by a single config file, and retired the older delegation service. The production cutover ran in small staged steps, and every pull request shows the DNS diff before anything deploys.
+- Did most of the work on the deployment service that onboards a repository to GitHub Actions. From a shared list of AWS accounts it creates the OIDC trust, an IAM deploy role per account, and the matching GitHub environments.
+- Built break-glass access for emergencies: IAM users that must set up MFA before they can do anything, cannot create access keys, and raise an alert when someone logs in.
+- Run MyParcel's AWS organization as code. Since 2024 I've been the main contributor to the management service, which holds Control Tower, the account factory, the service control policies, and the IAM Identity Center groups and permission sets that decide who can access which account. StackSets roll a baseline out to every account: CDK bootstrap, a break-glass role, alarm routing, and cross-account CloudWatch monitoring. GuardDuty, Macie, and Security Hub are administered from the audit account, and a root login raises an alert.
+- Looked after the infrastructure of the Core API, MyParcel's main API. I moved API Gateway to a declarative route config, added provisioned concurrency to the Lambda authorizer, turned on GuardDuty malware scanning and server access logging for S3, and upgraded the search cluster from Elasticsearch to OpenSearch, with scheduled snapshots.
+- Removed AWS App Mesh from the shared CDK libraries, the VPC base stack, the Core API, and the Order API.
+- Reworked alerting: alarms now page through PagerDuty, deploys show up as markers in New Relic, and I tuned the CloudWatch alarms that fired too often.
 
 **Senior Cloud Engineer @ [KNMI](https://www.knmi.nl)** `Aug. 2020 - May 2023`  
-_Led the Cloud Engineering team in establishing best practices for cloud deployments. Spearheaded the design of CI/CD frameworks to streamline application deployment on Amazon Web Services._
+_Led the cloud engineering team. We set the standards for deploying to AWS and designed the CI/CD setup that teams used to ship their applications._
 
-Key Contributions:
+What I worked on:
 
-- Coached team members on cloud best practices and led the development of the Cloud Landing Zone, emphasizing code-driven infrastructure setup and automation for deployment pipelines, ensuring fault tolerance, scalability, and high availability.
-- Assisted teams in migrating to AWS, resolving application issues, and automating both infrastructure and application deployment processes.
-- By facilitating effective communication with stakeholders, the team was able to identify and swiftly integrate innovative technologies and monitoring tools. This collaborative effort directly led to enhancements in the speed, quality, and efficiency of our deployment processes.
+- Coached the team on AWS and led the build of the Cloud Landing Zone, with all infrastructure defined in code and deployed through automated pipelines.
+- Helped teams move their applications to AWS, fixed the problems that came up along the way, and automated their infrastructure and application deploys.
+- Worked with stakeholders to choose and roll out new tools, monitoring among them, which made our deploys faster and more reliable.
 
 **Senior Cloud Engineer @ [Coolblue](https://www.coolblue.nl)** `Oct. 2015 - Jul. 2020`  
-_Pioneered the creation of a developer-centric platform on AWS, facilitating easy application deployment and maintenance._
+_Built a platform on AWS that let development teams deploy and run their own applications._
 
-Key Contributions:
+What I worked on:
 
-- Designed and maintained the platform's foundational infrastructure and deployment pipelines, focusing on automation, fault tolerance, scalability, and high availability.
-- Guided developers through the migration process, optimizing deployment processes, and leveraging monitoring tools to enhance application and system performance.
-- Fostered effective communication across development, operations, and business teams, and evaluated new technologies to recommend platform-agnostic solutions.
+- Designed and maintained the platform's base infrastructure and deploy pipelines.
+- Helped developers move their applications onto the platform, improved their deploys, and set up monitoring so they could see how their applications performed.
+- Worked between development, operations, and business teams, and evaluated new technologies for the platform.
 
 **Senior System Engineer @ [het Oogziekenhuis Rotterdam](https://www.oogziekenhuis.nl)** `Oct. 2008 – Sep. 2015`  
-_Focused on the technical implementation of ICT projects, system administration, and providing advanced support for medical staff. Acted as a technical liaison with external parties._
+_Ran the technical side of ICT projects, did system administration, and supported medical staff with technical problems. I was also the technical contact for outside suppliers._
 
-### Past Experience
+### Earlier roles
 
 - **All-round Engineer @ UNC Detachering** `Mar. 2007 – Dec. 2007`
 - **Implementation Coordinator @ KPN Internet Solutions** `Dec. 2004 – Mar. 2007`
@@ -51,46 +57,19 @@ _Focused on the technical implementation of ICT projects, system administration,
 - **Application Manager @ de Gemeente Dordrecht** `Dec. 2000 – Mar. 2004`
 - **All-round Engineer @ Futureline Communications** `Jan. 1999 – Jan. 2000`
 
-## Technical Experience
+## Skills
 
-**Cloud Technologies & Services:**
-
-- AWS: Comprehensive expertise across a broad range of services including compute, storage, database, networking, and security (e.g., CDK, EC2, S3, RDS, Lambda, IAM, CloudFormation, CloudFront)
-
-**Configuration Management & Automation:**
-
-- Ansible, Puppet
-
-**Containerization & Orchestration:**
-
-- Docker, AWS ECS, AWS Fargate
-
-**Scripting & Programming Languages:**
-
-- TypeScript, Python, Bash, PowerShell
-
-**Continuous Integration & Continuous Deployment (CI/CD):**
-
-- GitHub Actions, GitLab CI, Jenkins, TeamCity, Octopus Deploy
-
-**Monitoring & Logging:**
-
-- New Relic, Datadog, Splunk, AWS CloudWatch
-
-**Version Control:**
-
-- Git
-
-**Operating Systems:**
-
-- Linux, Windows
-
-**Miscellaneous Tools:**
-
-- Vault, Packer
+- **AWS:** CDK, CloudFormation and StackSets, ECS and Fargate, ECR, Lambda, API Gateway, CloudFront, WAF, Route 53, VPC and VPC endpoints, NLB and ALB, Cloud Map, S3, DynamoDB, RDS, ElastiCache, OpenSearch, Systems Manager, Secrets Manager, CloudWatch
+- **AWS organization:** Control Tower and Account Factory, Organizations and service control policies, IAM Identity Center
+- **Networking:** Envoy (routing, rate limiting, config reloads without restarts), DNS zone delegation and migration
+- **Infrastructure as code:** AWS CDK with integration tests and cdk-nag checks, Projen, Ansible, Packer
+- **Languages:** TypeScript on Node.js (AWS SDK v3, Lambda Powertools, Middy, Jest), Bash, PHP, Python
+- **Containers:** Docker (arm64 images, digest-pinned base images), ECS, Fargate
+- **CI/CD:** GitHub Actions (OIDC to AWS, environments, automatic promotion to production), GitLab CI, publishing internal npm libraries
+- **Monitoring:** CloudWatch, New Relic, PagerDuty, Datadog
+- **Security:** IAM, GuardDuty, Macie, Security Hub, WAF, ACM, HashiCorp Vault
+- **Ways of working:** architecture decision records, runbooks, load testing, Git, Linux
 
 ## Extra
 
-**Languages:**
-
-- Fluent in _English_ and _Dutch_.
+- Fluent in English and Dutch.
