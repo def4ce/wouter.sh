@@ -1,0 +1,25 @@
+// Imported by the theme's style.scss before its own rules, so these
+// selectors carry a `body` or `.content` prefix to win on specificity.
+
+body pre,
+body pre code {
+  color: $text;
+}
+
+body code {
+  color: $gruvbox-aqua;
+}
+
+body a:hover {
+  color: $gruvbox-fg0;
+  text-shadow: none;
+}
+
+// Links in page content fill with orange on hover; keep their text dark.
+.content a:hover {
+  color: $gruvbox-bg0-h;
+}
+
+body .btn-404 a:hover {
+  border-color: $gruvbox-fg0;
+}

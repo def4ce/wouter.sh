@@ -6,6 +6,9 @@ theme        = "hermit-v2"
 PygmentsCodeFences = true
 rssLimit           = 0
 
+[markup.highlight]
+  style = "gruvbox"
+
 [params.author]
   name = "Wouter in 't Veld"
 
