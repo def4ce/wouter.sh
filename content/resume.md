@@ -15,18 +15,21 @@ twitter: @wouterintveld
 ## Experience
 
 **Senior Platform Engineer @ [MyParcel](https://www.myparcel.nl)** `June 2023 - Present`  
-_We write our infrastructure in TypeScript with AWS CDK, ship it through GitHub Actions, and review each other's changes along the way._
+_I work in the cloud engineering team. We write our infrastructure in TypeScript with AWS CDK, ship it through GitHub Actions, and review each other's changes. I designed several of the platform's core services, and we run them together as a team._
 
-What I worked on:
+What I designed and built:
 
-- Designed and built the Envoy private gateway, which now runs in acceptance and production. Traffic goes through CloudFront and WAF to Envoy on ECS Fargate, then on to private API Gateways. Teams register their own routes and rate limits with a CDK construct, without touching the gateway repository. A reconciler turns those registrations into Envoy config, and Envoy picks it up without a restart.
-- Moved the shared `api.myparcel.nl` DNS zones into a new dns-service, driven by a single config file, and retired the older delegation service. The production cutover ran in small staged steps, and every pull request shows the DNS diff before anything deploys.
-- Did most of the work on the deployment service that onboards a repository to GitHub Actions. From a shared list of AWS accounts it creates the OIDC trust, an IAM deploy role per account, and the matching GitHub environments.
-- Built break-glass access for emergencies: IAM users that must set up MFA before they can do anything, cannot create access keys, and raise an alert when someone logs in.
-- Run MyParcel's AWS organization as code. Since 2024 I've been the main contributor to the management service, which holds Control Tower, the account factory, the service control policies, and the IAM Identity Center groups and permission sets that decide who can access which account. StackSets roll a baseline out to every account: CDK bootstrap, a break-glass role, alarm routing, and cross-account CloudWatch monitoring. GuardDuty, Macie, and Security Hub are administered from the audit account, and a root login raises an alert.
-- Looked after the infrastructure of the Core API, MyParcel's main API. I moved API Gateway to a declarative route config, added provisioned concurrency to the Lambda authorizer, turned on GuardDuty malware scanning and server access logging for S3, and upgraded the search cluster from Elasticsearch to OpenSearch, with scheduled snapshots.
-- Removed AWS App Mesh from the shared CDK libraries, the VPC base stack, the Core API, and the Order API.
-- Reworked alerting: alarms now page through PagerDuty, deploys show up as markers in New Relic, and I tuned the CloudWatch alarms that fired too often.
+- The Envoy private gateway, which now runs in acceptance and production. I designed the architecture, wrote the decision records behind it, and built it. Traffic goes through CloudFront and WAF to Envoy on ECS Fargate, then on to private API Gateways. Teams register their own routes and rate limits with a CDK construct, without touching the gateway repository. A reconciler turns those registrations into Envoy config, and Envoy picks it up without a restart.
+- The dns-service, which owns the shared `api.myparcel.nl` DNS zones from a single config file. I also planned and ran the staged production cutover that retired the older delegation service, with every pull request showing the DNS diff before anything deploys.
+- Break-glass access for emergencies: IAM users that must set up MFA before they can do anything, cannot create access keys, and raise an alert when someone logs in.
+
+What I worked on with the team:
+
+- Our AWS organization, which we run as code in the management service. I've been its main contributor since 2024. It holds Control Tower, the account factory, the service control policies, and the IAM Identity Center groups and permission sets that decide who can access which account. StackSets roll a baseline out to every account: CDK bootstrap, a break-glass role, alarm routing, and cross-account CloudWatch monitoring. GuardDuty, Macie, and Security Hub are administered from the audit account, and a root login raises an alert.
+- The deployment service that onboards a repository to GitHub Actions, where I did most of the work. From a shared list of AWS accounts it creates the OIDC trust, an IAM deploy role per account, and the matching GitHub environments.
+- The infrastructure of the Core API, MyParcel's main API. My part: a declarative route config for API Gateway, provisioned concurrency for the Lambda authorizer, GuardDuty malware scanning and server access logging for S3, and the upgrade from Elasticsearch to OpenSearch, with scheduled snapshots.
+- Removing AWS App Mesh from the shared CDK libraries, the VPC base stack, the Core API, and the Order API. I made those changes.
+- Alerting: alarms now page through PagerDuty, deploys show up as markers in New Relic, and I tuned the CloudWatch alarms that fired too often.
 
 **Senior Cloud Engineer @ [KNMI](https://www.knmi.nl)** `Aug. 2020 - May 2023`  
 _Led the cloud engineering team. We set the standards for deploying to AWS and designed the CI/CD setup that teams used to ship their applications._
