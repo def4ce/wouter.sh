@@ -4,7 +4,7 @@ date = "2026-10-11"
 
 # Wouter in 't Veld
 
-_Platform engineer at [MyParcel](https://www.myparcel.nl). I build and run the [AWS](https://aws.amazon.com/) platform our product teams deploy to: accounts, deploy pipelines, DNS, networking, and the shared infrastructure code that ties it together._
+_Platform engineer in the cloud engineering team at [MyParcel](https://www.myparcel.nl). Together we build and run the [AWS](https://aws.amazon.com/) platform our product teams deploy to: accounts, deploy pipelines, DNS, networking, and the shared infrastructure code that ties it together. A lot of the job is working with those teams and making things self-service, so they can ship without waiting on us._
 
 ```
 email:   hashbang@wouter.sh
@@ -15,7 +15,7 @@ twitter: @wouterintveld
 ## Experience
 
 **Senior Platform Engineer @ [MyParcel](https://www.myparcel.nl)** `June 2023 - Present`  
-_Part of the cloud engineering team. Most of my work is infrastructure in TypeScript and AWS CDK, shipped through GitHub Actions._
+_We write our infrastructure in TypeScript with AWS CDK, ship it through GitHub Actions, and review each other's changes along the way._
 
 What I worked on:
 
