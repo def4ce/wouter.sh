@@ -1,0 +1,46 @@
+// Event flow for the SSE-behind-a-gateway post.
+// Render: dot -Tsvg flow.dot -o flow.svg
+// Colors follow the site's Gruvbox dark theme; the canvas is transparent.
+digraph G {
+    rankdir=LR;
+    bgcolor="transparent";
+    pad=0.3;
+    nodesep=0.35;
+    ranksep=0.5;
+    fontname="Trebuchet MS,Verdana,sans-serif";
+    fontsize=12;
+    node [fontname="Trebuchet MS,Verdana,sans-serif", fontsize=12, shape=box,
+          style="rounded,filled", fillcolor="#3c3836", color="#a89984",
+          fontcolor="#ebdbb2"];
+    edge [fontname="Trebuchet MS,Verdana,sans-serif", fontsize=11,
+          color="#a89984", fontcolor="#d5c4a1"];
+
+    producers [label="Producers\n(other accounts)",
+               fillcolor="#fe8019", color="#fe8019", fontcolor="#1d2021"];
+    bus [label="Event bus\ntrusts org paths"];
+    log [label="Log stream\nkeyed by topic", shape=cylinder, style=filled];
+
+    subgraph cluster_service {
+        label="Stream service";
+        style="rounded,filled";
+        color="#665c54";
+        fillcolor="#32302f";
+        labeljust=l;
+        fontcolor="#d5c4a1";
+
+        i1 [label="Instance 1\nreads all shards\nbuffer + clients"];
+        i2 [label="Instance 2\nreads all shards\nbuffer + clients"];
+    }
+
+    gateway [label="CDN, WAF, proxy\nno route timeout\nlimit on opens"];
+    browsers [label="Browsers\nEventSource",
+              fillcolor="#83a598", color="#83a598", fontcolor="#1d2021"];
+
+    producers -> bus [label=" publish\n by ARN"];
+    bus -> log [label=" rule"];
+    log -> i1 [label=" every event"];
+    log -> i2 [label=" every event"];
+    i1 -> gateway [dir=back, label=" GET /streams/topic"];
+    i2 -> gateway [dir=back];
+    gateway -> browsers [dir=back, label=" reconnect with\n Last-Event-ID"];
+}
